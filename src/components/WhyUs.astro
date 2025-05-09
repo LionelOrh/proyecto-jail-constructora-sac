@@ -1,0 +1,131 @@
+---
+import { Image } from "astro:assets";
+import puntualidad from "../assets/puntualidad.webp";
+import eficiencia from "../assets/eficiencia.webp";
+import responsabilidad from "../assets/responsabilidad.webp";
+import respeto from "../assets/respeto.webp";
+---
+
+<section>
+    <article class="why-us">
+        <p>
+            JALI CONSTRUCTORA S.A.C. es su mejor aliado en proyectos de
+            construcción porque combinamos experiencia demostrada (con más de 11
+            obras ejecutadas en agua potable, edificación y saneamiento),
+            compromiso inquebrantable con plazos y presupuestos, especialización
+            técnica en ingeniería civil y arquitectura, estrictos estándares de
+            seguridad y sostenibilidad, y un equipo profesional dedicado a
+            superar expectativas. No solo entregamos obras, sino soluciones
+            integrales que transforman comunidades y generan confianza duradera.
+        </p>
+        <h1>¿Por qué elegirnos?</h1>
+    </article>
+    <article class="card-container">
+        <div class="card">
+            <div class="image-wrapper">
+                <Image
+                    src={responsabilidad}
+                    alt="Imagen de responsabilidad"
+                    width={300}
+                    height={200}
+                    class="valores"
+                />
+                <div class="text-overlay">Responsabilidad</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="image-wrapper">
+                <Image
+                    src={eficiencia}
+                    alt="Imagen de eficiencia"
+                    width={300}
+                    height={200}
+                    class="valores"
+                />
+                <div class="text-overlay">Eficiencia</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="image-wrapper">
+                <Image
+                    src={respeto}
+                    alt="Imagen de respecto"
+                    width={300}
+                    height={200}
+                    class="valores"
+                />
+                <div class="text-overlay">Respeto</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="image-wrapper">
+                <Image
+                    src={puntualidad}
+                    alt="Imagen de puntualidad"
+                    width={300}
+                    height={200}
+                    class="valores"
+                />
+                <div class="text-overlay">Puntualidad</div>
+            </div>
+        </div>
+    </article>
+</section>
+<style>
+    section {
+        padding: 60px;
+        background-color: #f0f0f0;
+    }
+    .why-us {
+        display: flex;
+        align-items: center;
+        max-width: 90%;
+        padding-bottom: 10px;
+    }
+    .why-us h1 {
+        font-family: "Poppins", sans-serif;
+        font-size: 80px;
+        color: #1a2251;
+        margin: 0;
+    }
+    .why-us p {
+        font-family: "Poppins", sans-serif;
+        font-size: 17px;
+        color: #383838;
+        margin: 20px 0 30px;
+        line-height: 1.4;
+    }
+    
+    .card-container {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .card {
+        position: relative;
+        width: 300px;
+    }
+    .image-wrapper {
+        position: relative;
+        display: block;
+        overflow: hidden;
+    }
+    .valores {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 5%;
+    }
+    .text-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        
+    }
+
+</style>

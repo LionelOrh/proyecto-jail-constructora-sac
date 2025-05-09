@@ -1,0 +1,172 @@
+---
+import { Image } from "astro:assets";
+import grupoObreros from "../assets/grupobreros.webp";
+---
+
+<section class="about">
+    <div class="about-header">
+        <span class="about-title about-title-small">CONOCE A</span>
+        <span class="about-title about-title-large"
+            >JAIL CONSTRUCTORA S.A.C</span
+        >
+        <p class="about-description">
+            Expertos en construir soluciones que perduran. Calidad, seguridad y
+            compromiso en cada proyecto.
+        </p>
+    </div>
+
+    <article class="about-content">
+        <div class="about-summary-container">
+            <div class="about-summary">
+                <span class="about-summary-title">Quienes</span>
+                <span class="about-summary-title">Somos</span>
+                <p class="about-summary-text">
+                    JAIL CONSTRUCTORA S.A.C. es una empresa peruana dedicada a
+                    la construcción de obras civiles, especializada en sistemas
+                    de agua potable y saneamiento. Con un equipo de
+                    profesionales altamente capacitados, nos comprometemos a
+                    entregar proyectos de calidad, cumpliendo con los más altos
+                    estándares de seguridad y eficiencia. Nuestra misión es
+                    contribuir al desarrollo sostenible del Perú, transformando
+                    comunidades a través de infraestructuras que mejoran la
+                    calidad de vida de las personas.
+                </p>
+            </div>
+            <div class="about-image-container">
+                <Image src={grupoObreros} alt="" class="about-image" />
+            </div>
+        </div>
+    </article>
+    <article class="about-mision-vision">
+        <div class="mision-container">
+            <h1 class="about-mision-title">Misión</h1>
+            <p class="about-mision-text">
+                Somos un equipo comprometido en ser la mejor opción en obras
+                civiles (edificación, vial, saneamiento y agua potable),
+                brindando servicios que mejoren la calidad de vida de las
+                comunidades. Buscamos combinar eficacia empresarial con
+                principios sociales, respetando los valores éticos, las
+                personas, las comunidades y el medio ambiente.
+            </p>
+        </div>
+        <div class="vision-container">
+            <h1 class="about-vision-title">Visión</h1>
+            <p class="about-vision-text">
+                Ser reconocidos como líderes en el sector de la construcción en
+                Perú, destacando por nuestra calidad, innovación y compromiso
+                con el desarrollo sostenible.
+            </p>
+        </div>
+    </article>
+    <article class="about-politicas-container">
+        <h1 class="about-politicas-title">Políticas de Calidad</h1>
+        <div class="img-politicas">
+            <div class="seguridad">SEGURIDAD Y PREVENCIÓN DE RIESGOS</div>
+            <div class="cuidado">CUIDADO Y RESPETO DEL MEDIO AMBIENTE</div>
+            <div class="responsabilidad">RESPONSABILIDAD SOCIAL</div>
+            <div class="investigacion">
+                INVESTIGACIÓN, INNOVACIÓN Y CAPACITACIÓN CONSTANTE
+            </div>
+        </div>
+    </article>
+</section>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    .about-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        width: 100%;
+        height: 50vh;
+        padding: 0 60px;
+        color: #fff;
+        background-image: url("../assets/topografo.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    .about-title {
+        margin: 0;
+    }
+    .about-title-small {
+        margin: 0;
+        font-size: 50px;
+    }
+    .about-title-large {
+        font-weight: bold;
+        font-size: 80px;
+    }
+    .about-description {
+        font-size: 20px;
+    }
+    
+    .about-content {
+        display: flex;
+        justify-content: center;
+        padding: 30px 0px;
+    }
+    .about-summary-container{
+        display: flex;
+        width: 70%;
+        gap: 20px;
+    }
+    .about-summary {
+        display: flex;
+        flex-direction: column;
+    }
+    .about-image {
+        width: 400px;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0 10%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .about-mision-vision {
+        display: flex;
+        justify-content: center;
+        padding: 30px 60px;
+        gap: 20px;
+        background-color: rgb(27, 78, 136);
+    }
+    .mision-container,
+    .vision-container {
+        width: 300px;
+        border: 3px solid #fff;
+    }
+    .about-politicas-container {
+        padding: 30px 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .img-politicas {
+        display: grid;
+        grid-template-columns: repeat(2, 500px);
+        grid-template-rows: repeat(3, 300px);
+        gap: 20px;
+    }
+    .cuidado,
+    .responsabilidad,
+    .seguridad,
+    .investigacion {
+        background-color: rgb(28, 111, 117);
+    }
+    .cuidado {
+        grid-row: span 2 / span 2;
+    }
+    .responsabilidad {
+        grid-row: span 2 / span 2;
+    }
+    .investigacion {
+        grid-column-start: 2;
+        grid-row-start: 3;
+    }
+    .about-politicas-title {
+        font-size: 40px;
+    }
+</style>
