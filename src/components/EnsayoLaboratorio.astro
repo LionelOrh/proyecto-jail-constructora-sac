@@ -1,0 +1,165 @@
+---
+import { Image } from "astro:assets";
+import ensayosespeciales from "../assets/ensayosespeciales.webp";
+import ensayosrocas from "../assets/ensayosrocas.webp";
+import ensayoscamposuelos from "../assets/ensayoscamposuelos.webp";
+import ensayosuelos from "../assets/ensayosuelos.webp";
+import ensayosagreados from "../assets/ensayosagregados.webp";
+import ensayosconcreto from "../assets/ensayosconcreto.webp";
+import ensayosquimicos from "../assets/ensayosquimicos.webp";
+---
+
+<section class="servicio-ensayo-laboratorio">
+    <section class="servicio-container">
+        <article class="servicio e-especiales">
+            <Image
+                src={ensayosespeciales}
+                alt="Planta de Tratamiento de Agua Potable"
+                class="servicio-image"
+                width={500}
+                height={500}
+            />
+            <span>Ensayos Especiales (ASTM)</span>
+        </article>
+        <article class="servicio e-rocas">
+            <Image
+                src={ensayosrocas}
+                alt="Planta de Tratamiento de Agua Potable"
+                class="servicio-image"
+                width={500}
+                height={500}
+            />
+            <span>Ensayos en roca (AST-UNE-EN)</span>
+        </article>
+        <article class="servicio e-l-title">
+            <div>
+                <h2>LABORATORIO DE ENSAYOS</h2>
+            </div>
+        </article>
+        <article class="servicio e-agregados">
+            <Image
+                src={ensayosagreados}
+                alt="Ensayos de campo en suelos"
+                class="servicio-image"
+                width={500}
+                height={500}
+            />
+            <span>Ensayos de agregados (ASMT - MTC - NTP)</span>
+        </article>
+        <article class="servicio e-suelos">
+            <Image
+                src={ensayosuelos}
+                alt="Planta de Tratamiento de Agua Potable"
+                class="servicio-image"
+                width={500}
+                height={500}
+            />
+            <span>Ensayos de suelos (ASTM-MTC)</span>
+        </article>
+
+        <article class="servicio e-campo-suelos">
+            <Image
+                src={ensayoscamposuelos}
+                alt="Ensayos de campo en suelos"
+                class="servicio-image"
+                width={800}
+                height={700}
+            />
+            <span>Ensayos de campo en suelos</span>
+        </article>
+        <article class="servicio e-concreto">
+            <Image
+                src={ensayosconcreto}
+                alt="Ensayos de concreto fresco y endurecido (ASTM -MTC)"
+                class="servicio-image"
+                width={500}
+                height={500}
+            />
+            <span>Ensayos de concreto fresco y endurecido (ASTM -MTC)</span>
+        </article>
+        <article class="servicio e-quimicos">
+            <Image
+                src={ensayosquimicos}
+                alt="Ensayos químicos (ASTM - MTC - NTP)"
+                class="servicio-image"
+                width={500}
+                height={500}
+            />
+            <span>Ensayos químicos (ASTM - MTC - NTP)</span>
+        </article>
+    </section>
+</section>
+<style>
+    .servicio-container {
+        display: grid;
+        grid-template-columns: repeat(3, 400px);
+        grid-template-rows: repeat(7, 90px);
+        gap: 10px;
+        justify-content: center;
+    }
+    .servicio-ensayo-laboratorio {
+        width: 100%;
+        background-color: lightblue;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .servicio {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .servicio-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+        filter: brightness(0.8);
+    }
+    span {
+        position: relative;
+        z-index: 2;
+        color: white;
+    }
+    .e-especiales {
+        grid-row: span 2 / span 2;
+    }
+    .e-rocas {
+        grid-row: span 3 / span 3;
+    }
+    .e-agregados {
+        grid-row: span 3 / span 3;
+        grid-column-start: 1;
+        grid-row-start: 3;
+    }
+    .e-suelos {
+        grid-row: span 2 / span 2;
+        grid-column-start: 2;
+        grid-row-start: 4;
+    }
+    .e-campo-suelos {
+        grid-row: span 4 / span 4;
+        grid-column-start: 3;
+        grid-row-start: 2;
+    }
+    .e-concreto {
+        grid-row: span 2 / span 2;
+        grid-column: span 2 / span 2;
+        grid-row-start: 6;
+    }
+    .e-quimicos {
+        grid-row: span 2 / span 2;
+        grid-column-start: 3;
+        grid-row-start: 6;
+    }
+</style>

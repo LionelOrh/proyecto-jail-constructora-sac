@@ -1,0 +1,388 @@
+---
+import Image from "astro/components/Image.astro";
+import consultoria1 from "../assets/consultoria1.webp";
+import consultoria2 from "../assets/consultoria2.webp";
+import consultoria3 from "../assets/consultoria3.webp";
+import consultoria4 from "../assets/consultoria4.webp";
+import consultoria5 from "../assets/consultoria5.webp";
+import consultoria6 from "../assets/consultoria6.webp";
+import consultoria7 from "../assets/consultoria7.webp";
+import consultoria8 from "../assets/consultoria8.webp";
+import consultoria9 from "../assets/consultoria9.webp";
+---
+
+<section class="gallery-container">
+    <h2>Consultoría</h2>
+    <div class="carousel-3d">
+        <div class="carousel-item">
+            <Image
+                src={consultoria1}
+                alt="Consultoría"
+                class="carousel-image"
+                width={550}
+                height={350}
+            />
+            <span
+                >Planeamiento y evaluación de métodos de ejecución de Obras
+                Civiles.</span
+            >
+        </div>
+        <!-- Item 2 con imagen -->
+        <div class="carousel-item">
+            <Image
+                src={consultoria2}
+                alt="Diseño de planos"
+                class="carousel-image"
+                width={550}
+                height={350}
+            />
+            <span>Diseño y Evaluación de Planos de vivienda.</span>
+        </div>
+
+        <!-- Item 3 con imagen -->
+        <div class="carousel-item">
+            <Image
+                src={consultoria3}
+                alt="Optimización de proyectos"
+                class="carousel-image"
+                width={550}
+                height={350}
+            />
+            <span>Diseño y optimización de proyectos de construcción.</span>
+        </div>
+
+        <!-- Item 4 con imagen -->
+        <div class="carousel-item">
+            <Image
+                src={consultoria4}
+                alt="Voladura controlada"
+                class="carousel-image"
+                width={550}
+                height={350}
+            />
+            <span>
+                Diseño de voladura controlada en zonas críticas, de contorno y/o
+                precorte.
+            </span>
+        </div>
+
+        <!-- Item 5 con imagen -->
+        <div class="carousel-item">
+            <Image
+                src={consultoria5}
+                alt="Voladura no convencional"
+                class="carousel-image"
+                width={550}
+                height={350}
+            />
+            <span>
+                Diseño de voladura no convencional en obras Civiles,
+                demoliciones.
+            </span>
+        </div>
+
+        <!-- Item 6 con imagen -->
+        <div class="carousel-item">
+            <Image
+                src={consultoria6}
+                alt="Impacto ambiental"
+                class="carousel-image"
+                width={550}
+                height={350}
+            />
+            <span
+                >Evaluación de impactos medioambientales de proyectos Civiles.
+            </span>
+        </div>
+
+        <!-- Item 7 con imagen -->
+        <div class="carousel-item">
+            <Image
+                src={consultoria7}
+                alt="Maquinaria pesada"
+                class="carousel-image"
+                width={550}
+                height={350}
+            />
+            <span>Evaluación de Rendimiento de maquinaria pesada.</span>
+        </div>
+
+        <!-- Item 8 con imagen -->
+        <div class="carousel-item">
+            <Image
+                src={consultoria8}
+                alt="Capacitación"
+                class="carousel-image"
+                width={550}
+                height={350}
+            />
+            <span>Capacitación, entrenamiento, conferencias y seminarios.</span>
+        </div>
+
+        <!-- Item 9 con imagen -->
+        <div class="carousel-item">
+            <Image
+                src={consultoria9}
+                alt="Cotización"
+                class="carousel-image"
+                width={550}
+                height={350}
+            />
+            <span>Cotización de Obras Civiles.</span>
+        </div>
+    </div>
+
+    <div class="carousel-indicators">
+        <button class="prev-btn">‹</button>
+        <button class="next-btn">›</button>
+    </div>
+</section>
+
+<style>
+    .gallery-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 2rem;
+    }
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        color: #4a6fa5;
+    }
+    .carousel-3d {
+        position: relative;
+        height: 400px;
+        perspective: 1200px;
+        margin: 5rem auto;
+        transform-style: preserve-3d;
+    }
+    .carousel-3d:active {
+        cursor: grabbing;
+    }
+    .carousel-item {
+        position: absolute;
+        width: 250px;
+        height: 350px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.5s ease;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        text-shadow: 1px 1px 3px rgba(8, 8, 8, 0.5);
+        overflow: hidden;
+    }
+    .carousel-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+        filter: brightness(0.5);
+        transition: transform 0.3s ease-in-out;
+    }
+    .carousel-item:hover .carousel-image {
+        transform: scale(1.1);
+    }
+
+    .carousel-item span {
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Posicionamiento inicial */
+    .carousel-item:nth-child(1) {
+        transform: translate(-50%, -50%) rotateY(0deg) translateZ(500px);
+        opacity: 0.4;
+    }
+    .carousel-item:nth-child(2) {
+        transform: translate(-50%, -50%) rotateY(40deg) translateZ(500px);
+        opacity: 0.5;
+    }
+    .carousel-item:nth-child(3) {
+        transform: translate(-50%, -50%) rotateY(80deg) translateZ(500px);
+        opacity: 0.6;
+    }
+    .carousel-item:nth-child(4) {
+        transform: translate(-50%, -50%) rotateY(120deg) translateZ(500px);
+        opacity: 0.7;
+    }
+    .carousel-item:nth-child(5) {
+        transform: translate(-50%, -50%) rotateY(160deg) translateZ(500px);
+        opacity: 1;
+    }
+    .carousel-item:nth-child(6) {
+        transform: translate(-50%, -50%) rotateY(200deg) translateZ(500px);
+        opacity: 0.7;
+    }
+    .carousel-item:nth-child(7) {
+        transform: translate(-50%, -50%) rotateY(240deg) translateZ(500px);
+        opacity: 0.6;
+    }
+    .carousel-item:nth-child(8) {
+        transform: translate(-50%, -50%) rotateY(280deg) translateZ(500px);
+        opacity: 0.5;
+    }
+    .carousel-item:nth-child(9) {
+        transform: translate(-50%, -50%) rotateY(320deg) translateZ(500px);
+        opacity: 0.4;
+    }
+
+    .carousel-item {
+        filter: brightness(0.9);
+        transition: all 0.5s ease;
+    }
+
+    .carousel-item.active {
+        filter: brightness(1.2);
+        transform: translate(-50%, -50%) scale(1.05);
+        z-index: 10;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .carousel-indicators {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .carousel-controls {
+        margin-top: 2rem;
+    }
+
+    .carousel-indicators button {
+        padding: 0.8rem 1.2rem;
+        background: #4a6fa5;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.2rem;
+        transition: background 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .carousel-indicators button:hover {
+        background: #3a5a80;
+    }
+</style>
+
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+        const carousel = document.querySelector(".carousel-3d");
+        const items = document.querySelectorAll(".carousel-item");
+        const nextBtn = document.querySelector(".next-btn");
+        const prevBtn = document.querySelector(".prev-btn");
+
+        if (!carousel || !items.length || !nextBtn || !prevBtn) {
+            console.error("Elementos del carrusel no encontrados");
+            return;
+        }
+
+        let currentAngle = 0;
+        const angleIncrement = 40; // 360° / 9 items
+        let isDragging = false;
+        let startX, startAngle;
+
+        function updateCarousel() {
+            let activeIndex = 0;
+            const minAngleDiff = 20; // Margen para considerar "activo"
+
+            items.forEach((item, index) => {
+                const itemAngle = currentAngle + index * angleIncrement;
+                const z = 400; // Ajustado a tu valor actual
+                const opacity =
+                    Math.cos(((itemAngle % 360) * Math.PI) / 180) * 0.4 + 0.6;
+
+                item.style.transform = `translate(-50%, -50%) rotateY(${itemAngle}deg) translateZ(${z}px)`;
+                item.style.opacity = opacity;
+
+                const normalizedAngle = ((itemAngle % 360) + 360) % 360;
+                if (
+                    normalizedAngle <= minAngleDiff ||
+                    normalizedAngle >= 360 - minAngleDiff
+                ) {
+                    item.classList.add("active");
+                    activeIndex = index;
+                } else {
+                    item.classList.remove("active");
+                }
+            });
+        }
+
+        // Eventos para arrastrar
+        carousel.addEventListener("mousedown", (e) => {
+            isDragging = true;
+            startX = e.clientX;
+            startAngle = currentAngle;
+            carousel.style.cursor = "grabbing";
+            e.preventDefault();
+        });
+
+        document.addEventListener("mousemove", (e) => {
+            if (!isDragging) return;
+            const deltaX = e.clientX - startX;
+            currentAngle = startAngle + deltaX * 0.08; // Sensibilidad ajustada
+            updateCarousel();
+        });
+
+        document.addEventListener("mouseup", () => {
+            if (!isDragging) return;
+            isDragging = false;
+            carousel.style.cursor = "grab";
+            // Ajustar a la posición más cercana
+            const closestIndex = Math.round(-currentAngle / angleIncrement);
+            currentAngle = -closestIndex * angleIncrement;
+            updateCarousel();
+        });
+
+        // Soporte para touch
+        carousel.addEventListener("touchstart", (e) => {
+            isDragging = true;
+            startX = e.touches[0].clientX;
+            startAngle = currentAngle;
+            e.preventDefault();
+        });
+
+        document.addEventListener("touchmove", (e) => {
+            if (!isDragging) return;
+            const deltaX = e.touches[0].clientX - startX;
+            currentAngle = startAngle + deltaX * 0.3;
+            updateCarousel();
+            e.preventDefault();
+        });
+
+        document.addEventListener("touchend", () => {
+            if (!isDragging) return;
+            isDragging = false;
+            const closestIndex = Math.round(-currentAngle / angleIncrement);
+            currentAngle = -closestIndex * angleIncrement;
+            updateCarousel();
+        });
+
+        // Controles de botón
+        nextBtn.addEventListener("click", () => {
+            currentAngle -= angleIncrement;
+            updateCarousel();
+        });
+
+        prevBtn.addEventListener("click", () => {
+            currentAngle += angleIncrement;
+            updateCarousel();
+        });
+
+        // Inicializar
+        updateCarousel();
+    });
+</script>

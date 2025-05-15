@@ -1,0 +1,117 @@
+---
+import { Image } from "astro:assets";
+import areaambiental2 from "../assets/areaambiental2.webp";
+import levtopografico2 from "../assets/levtopografico2.webp";
+import plantatraguaresiduales from "../assets/PlantaTratamientoAguasResiduales.webp";
+import plantatraguapotable from "../assets/PlantaTratamientoAguasPotable.webp";
+---
+
+<section class="servicio-obras-agua-alcantarillado">
+    <section class="servicio-container">
+        <article class="servicio obraa-title">
+            <div>
+                <h2>OBRAS DE AGUA POTABLE Y ALCANTARILLADO</h2>
+            </div>
+        </article>
+        <article class="servicio areaa-ambiental">
+            <Image
+                src={areaambiental2}
+                alt="Área Ambiental"
+                class="servicio-image"
+                width={500}
+                height={500}
+            />
+            <span>Área Ambiental</span>
+        </article>
+        <article class="servicio leva-topografico">
+            <Image
+                src={levtopografico2}
+                alt="Levantamiento Topográfico"
+                class="servicio-image"
+                width={500}
+                height={500}
+            />
+            <span>Levantamiento Topográfico</span>
+        </article>
+        <article class="servicio p-t-agua-residuales">
+            <Image
+                src={plantatraguaresiduales}
+                alt="Planta de Tratamiento de Agua Residuales"
+                class="servicio-image"
+                width={500}
+                height={500}
+            />
+            <span>Planta de Tratamiento de Agua Residuales</span>
+        </article>
+        <article class="servicio p-t-agua-potable">
+            <Image
+                src={plantatraguapotable}
+                alt="Planta de Tratamiento de Agua Potable"
+                class="servicio-image"
+                width={500}
+                height={500}
+            />
+            <span>Planta de Tratamiento de Agua Potable</span>
+        </article>
+    </section>
+</section>
+<style>
+    .servicio-obras-agua-alcantarillado {
+        width: 100%;
+        background-color: #aacae6;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .servicio-container {
+        display: grid;
+        grid-template-columns: repeat(3, 400px);
+        grid-template-rows: repeat(4, 160px);
+        gap: 10px;
+    }
+    .servicio {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .servicio-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+        filter: brightness(0.8);
+    }
+    span {
+        position: relative;
+        z-index: 2;
+        color: white;
+    }
+
+    .areaa-ambiental {
+        grid-column: span 2 / span 2;
+        grid-row: span 2 / span 2;
+    }
+    .leva-topografico {
+        grid-row: span 3 / span 3;
+        grid-row-start: 2;
+    }
+    .p-t-agua-residuales {
+        grid-row: span 2 / span 2;
+        grid-column-start: 2;
+        grid-row-start: 3;
+    }
+    .p-t-agua-potable {
+        grid-row: span 2 / span 2;
+        grid-column-start: 3;
+        grid-row-start: 3;
+    }
+</style>

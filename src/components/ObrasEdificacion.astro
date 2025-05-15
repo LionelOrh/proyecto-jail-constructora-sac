@@ -1,0 +1,162 @@
+---
+import { Image } from "astro:assets";
+import electricista from "../assets/edificacion1.webp";
+import topografia from "../assets/edificacion2.webp";
+import gasfiteria from "../assets/gasfiteria.webp";
+import delineante from "../assets/delineantecad.webp";
+import arquitectura from "../assets/arquitectura.webp";
+import diseñadorinteriores from "../assets/diseñadorinteriores.webp";
+import imperbealiazacion from "../assets/impermeabilizacion.webp";
+---
+
+<section class="servicio-obras-edificacion">
+    <section class="servicio-container">
+        <article class="servicio obrae-title">
+            <div>
+                <h2>OBRAS DE EDIFICACIÓN</h2>
+            </div>
+        </article>
+        <article class="servicio electricista">
+            <Image
+                src={electricista}
+                alt="Electricista"
+                class="servicio-image"
+                width={500}
+                height={500}
+            />
+            <span>Electricista</span>
+        </article>
+        <article class="servicio topografia">
+            <Image
+                src={topografia}
+                alt="Topografia"
+                class="servicio-image"
+                width={500}
+                height={500}
+            />
+            <span>Topografía</span>
+        </article>
+        <article class="servicio gasfiteria">
+            <Image
+                src={gasfiteria}
+                alt="Gasfiteria"
+                class="servicio-image"
+                width={500}
+                height={500}
+            />
+            <span>Gastifería</span>
+        </article>
+        <article class="servicio delineante">
+            <Image
+                src={delineante}
+                alt="Delineante"
+                class="servicio-image"
+                width={500}
+                height={500}
+            />
+            <span>Delineante CAD</span>
+        </article>
+        <article class="servicio arquitectura">
+            <Image
+                src={arquitectura}
+                alt="Arquitectura"
+                class="servicio-image"
+                width={500}
+                height={500}
+            />
+            <span>Arquitectura</span>
+        </article>
+        <article class="servicio diseño">
+            <Image
+                src={diseñadorinteriores}
+                alt="diseño"
+                class="servicio-image"
+                width={500}
+                height={500}
+            />
+            <span>Diseñador y decoración de Interiores</span>
+        </article>
+        <article class="servicio tecnico">
+            <Image
+                src={imperbealiazacion}
+                alt="tecnico"
+                class="servicio-image"
+                width={500}
+                height={500}
+            />
+            <span>Técnico de Impermeabilización</span>
+        </article>
+    </section>
+</section>
+<style>
+    .servicio-obras-edificacion {
+        width: 100%;
+        background-color: #d5e9f8;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .servicio-container {
+        display: grid;
+        grid-template-columns: repeat(3, 400px);
+        grid-template-rows: repeat(7, 85px);
+        gap: 10px;
+        justify-content: center;
+    }
+    .electricista {
+        grid-row: span 3 / span 3;
+    }
+    .topografia {
+        grid-row: span 2 / span 2;
+    }
+    .gasfiteria {
+        grid-row: span 3 / span 3;
+    }
+    .delineante {
+        grid-row: span 2 / span 2;
+        grid-column-start: 2;
+        grid-row-start: 4;
+    }
+    .arquitectura {
+        grid-row: span 3 / span 3;
+        grid-column-start: 3;
+        grid-row-start: 3;
+    }
+    .diseño {
+        grid-row: span 3 / span 3;
+        grid-column-start: 1;
+        grid-row-start: 5;
+    }
+    .tecnico {
+        grid-column: span 2 / span 2;
+        grid-row: span 2 / span 2;
+        grid-column-start: 2;
+        grid-row-start: 6;
+    }
+    .servicio-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+        filter: brightness(0.8);
+    }
+    span {
+        position: relative;
+        z-index: 2;
+        color: white;
+    }
+    .servicio {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+</style>

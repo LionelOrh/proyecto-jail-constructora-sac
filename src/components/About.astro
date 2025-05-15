@@ -39,7 +39,7 @@ import grupoObreros from "../assets/grupobreros.webp";
     </article>
     <article class="about-mision-vision">
         <div class="mision-container">
-            <h1 class="about-mision-title">Misión</h1>
+            <h2 class="about-mision-title">Misión</h2>
             <p class="about-mision-text">
                 Somos un equipo comprometido en ser la mejor opción en obras
                 civiles (edificación, vial, saneamiento y agua potable),
@@ -50,7 +50,7 @@ import grupoObreros from "../assets/grupobreros.webp";
             </p>
         </div>
         <div class="vision-container">
-            <h1 class="about-vision-title">Visión</h1>
+            <h2 class="about-vision-title">Visión</h2>
             <p class="about-vision-text">
                 Ser reconocidos como líderes en el sector de la construcción en
                 Perú, destacando por nuestra calidad, innovación y compromiso
@@ -59,7 +59,7 @@ import grupoObreros from "../assets/grupobreros.webp";
         </div>
     </article>
     <article class="about-politicas-container">
-        <h1 class="about-politicas-title">Políticas de Calidad</h1>
+        <h2 class="about-politicas-title">Políticas de Calidad</h2>
         <div class="img-politicas">
             <div class="seguridad">SEGURIDAD Y PREVENCIÓN DE RIESGOS</div>
             <div class="cuidado">CUIDADO Y RESPETO DEL MEDIO AMBIENTE</div>
@@ -76,6 +76,7 @@ import grupoObreros from "../assets/grupobreros.webp";
         box-sizing: border-box;
     }
     .about-header {
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: end;
@@ -86,8 +87,15 @@ import grupoObreros from "../assets/grupobreros.webp";
         background-image: url("../assets/topografo.webp");
         background-size: cover;
         background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
+        z-index: 0;
+    }
+
+    .about-header::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
     }
     .about-title {
         margin: 0;
@@ -117,6 +125,7 @@ import grupoObreros from "../assets/grupobreros.webp";
     .about-summary {
         display: flex;
         flex-direction: column;
+        font-family: "Noto Sans", sans-serif;
     }
     .about-image {
         width: 400px;
@@ -131,11 +140,13 @@ import grupoObreros from "../assets/grupobreros.webp";
         padding: 30px 60px;
         gap: 20px;
         background-color: rgb(27, 78, 136);
+        font-family: "Noto Sans", sans-serif;
     }
     .mision-container,
     .vision-container {
         width: 300px;
         border: 3px solid #fff;
+        padding: 10px;
     }
     .about-politicas-container {
         padding: 30px 60px;
