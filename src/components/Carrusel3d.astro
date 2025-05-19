@@ -12,7 +12,9 @@ import consultoria9 from "../assets/consultoria9.webp";
 ---
 
 <section class="gallery-container">
-    <h2>Consultoría</h2>
+    <div class="gallery-header">
+        <span class="gallery-title">Consultoría</span>
+    </div>
     <div class="carousel-3d">
         <div class="carousel-item">
             <Image
@@ -140,21 +142,35 @@ import consultoria9 from "../assets/consultoria9.webp";
 
 <style>
     .gallery-container {
-        max-width: 1000px;
+        max-width: 100%;
         margin: 0 auto;
         text-align: center;
         padding: 2rem;
     }
-    h1 {
+    .gallery-header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+    .gallery-header::before,
+    .gallery-header::after {
+        content: "";
+        flex: 1;
+        height: 2px;
+        background: #4a6fa5;
+        margin: 0 1rem;
+    }
+    .gallery-title {
         font-size: 3rem;
+        font-weight: bold;
         margin-bottom: 2rem;
         color: #4a6fa5;
     }
     .carousel-3d {
         position: relative;
-        height: 400px;
+        height: 420px;
         perspective: 1200px;
-        margin: 5rem auto;
         transform-style: preserve-3d;
     }
     .carousel-3d:active {
@@ -163,7 +179,7 @@ import consultoria9 from "../assets/consultoria9.webp";
     .carousel-item {
         position: absolute;
         width: 250px;
-        height: 350px;
+        height: 300px;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);

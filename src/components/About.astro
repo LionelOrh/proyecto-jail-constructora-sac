@@ -1,6 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import grupoObreros from "../assets/grupobreros.webp";
+import seguridad from "../assets/seguridad.webp";
+import cuidado from "../assets/cuidado.webp";
+import responsabilidad from "../assets/responsabilidad-social.webp";
+import investigacion from "../assets/investigacion.webp";
 ---
 
 <section class="about">
@@ -17,9 +21,11 @@ import grupoObreros from "../assets/grupobreros.webp";
 
     <article class="about-content">
         <div class="about-summary-container">
+            <div class="about-image-container">
+                <Image src={grupoObreros} alt="" class="about-image" />
+            </div>
             <div class="about-summary">
-                <span class="about-summary-title">Quienes</span>
-                <span class="about-summary-title">Somos</span>
+                <span class="about-summary-title">Quienes Somos</span>
                 <p class="about-summary-text">
                     JAIL CONSTRUCTORA S.A.C. es una empresa peruana dedicada a
                     la construcción de obras civiles, especializada en sistemas
@@ -32,9 +38,7 @@ import grupoObreros from "../assets/grupobreros.webp";
                     calidad de vida de las personas.
                 </p>
             </div>
-            <div class="about-image-container">
-                <Image src={grupoObreros} alt="" class="about-image" />
-            </div>
+            
         </div>
     </article>
     <article class="about-mision-vision">
@@ -59,14 +63,48 @@ import grupoObreros from "../assets/grupobreros.webp";
         </div>
     </article>
     <article class="about-politicas-container">
-        <h2 class="about-politicas-title">Políticas de Calidad</h2>
+        <div class="about-politicas-header">
+            <span>Políticas de Calidad</span>
+        </div>
         <div class="img-politicas">
-            <div class="seguridad">SEGURIDAD Y PREVENCIÓN DE RIESGOS</div>
-            <div class="cuidado">CUIDADO Y RESPETO DEL MEDIO AMBIENTE</div>
-            <div class="responsabilidad">RESPONSABILIDAD SOCIAL</div>
-            <div class="investigacion">
-                INVESTIGACIÓN, INNOVACIÓN Y CAPACITACIÓN CONSTANTE
-            </div>
+            <article class="politicas seguridad">
+                <Image
+                    src={seguridad}
+                    alt=""
+                    class="politicas-imagen"
+                    width={500}
+                />
+
+                <span>SEGURIDAD Y PREVENCIÓN DE RIESGOS</span>
+            </article>
+            <article class="politicas cuidado">
+                <Image
+                    src={cuidado}
+                    alt=""
+                    class="politicas-imagen"
+                    width={500}
+                />
+                <span>CUIDADO Y RESPETO DEL MEDIO AMBIENTE</span>
+            </article>
+            <article class="politicas responsabilidad">
+                <Image
+                    src={responsabilidad}
+                    alt=""
+                    class="politicas-imagen"
+                    width={500}
+                />
+
+                <span>RESPONSABILIDAD SOCIAL</span>
+            </article>
+            <article class="politicas investigacion">
+                <Image
+                    src={investigacion}
+                    alt=""
+                    class="politicas-imagen"
+                    width={500}
+                />
+                <span>INVESTIGACIÓN, INNOVACIÓN Y CAPACITACIÓN CONSTANTE</span>
+            </article>
         </div>
     </article>
 </section>
@@ -111,16 +149,21 @@ import grupoObreros from "../assets/grupobreros.webp";
     .about-description {
         font-size: 20px;
     }
-    
+
     .about-content {
         display: flex;
-        justify-content: center;
+        height: 50vh;
         padding: 30px 0px;
     }
-    .about-summary-container{
+    .about-summary-container {
         display: flex;
-        width: 70%;
-        gap: 20px;
+        padding: 0 60px;
+        gap: 40px;
+    }
+    .about-summary-title{
+        font-size: 50px;
+        font-weight: bold;
+        color: #003366;
     }
     .about-summary {
         display: flex;
@@ -128,7 +171,7 @@ import grupoObreros from "../assets/grupobreros.webp";
         font-family: "Noto Sans", sans-serif;
     }
     .about-image {
-        width: 400px;
+        width: 500px;
         height: 100%;
         object-fit: cover;
         border-radius: 0 10%;
@@ -150,16 +193,37 @@ import grupoObreros from "../assets/grupobreros.webp";
     }
     .about-politicas-container {
         padding: 30px 60px;
+        
+    }
+
+    .about-politicas-header {
         display: flex;
-        flex-direction: column;
         align-items: center;
+        justify-content: center;
+        margin: 2rem 0;
+    }
+
+    .about-politicas-header::before,
+    .about-politicas-header::after {
+        content: "";
+        flex: 1;
+        border-bottom: 2px solid #0099ff; /* Cambia el color si deseas */
+        margin: 0 1rem;
+    }
+
+    .about-politicas-header span {
+        font-weight: bold;
+        font-size: 3rem;
+        color: #003366; /* Color del texto */
+        white-space: nowrap;
     }
 
     .img-politicas {
         display: grid;
-        grid-template-columns: repeat(2, 500px);
+        grid-template-columns: repeat(2, 600px);
         grid-template-rows: repeat(3, 300px);
         gap: 20px;
+        justify-content: center;
     }
     .cuidado,
     .responsabilidad,
@@ -177,7 +241,27 @@ import grupoObreros from "../assets/grupobreros.webp";
         grid-column-start: 2;
         grid-row-start: 3;
     }
-    .about-politicas-title {
-        font-size: 40px;
+    .politicas {
+        position: relative;
+        border-radius: 0 40px 0 40px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .politicas-imagen {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+    }
+    .politicas span {
+        position: relative;
+        z-index: 2;
+        padding: 30px;
     }
 </style>
