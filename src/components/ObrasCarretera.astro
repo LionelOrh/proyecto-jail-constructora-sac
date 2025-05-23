@@ -1,140 +1,49 @@
 ---
 import { Image } from "astro:assets";
-import levtopografico from "../assets/levtopografico.webp";
-import segOcupacional from "../assets/segocupacional.webp";
-import areaambiental from "../assets/areaambiental.webp";
-import mecsuelos from "../assets/mecsuelos.webp";
-import enfermeria from "../assets/enfermeria.webp";
+import obracarretera from "../assets/obracarretera.webp";
 ---
 
 <section class="servicio-obras-carretera">
-    <section class="servicio-container">
-        <article class="servicio lev-topografico">
+    <article class="servicio-container">
+        <div>
+            <h2>Obras de carretera</h2>
+            <ul class="servicio-detalles">
+                <li>Levantamiento Topográfico</li>
+                <li>Seguridad Ocupacional </li>
+                <li>Área Ambiental</li>
+                <li>Mecánica de Suelos</li>
+                <li>Enfermería</li>
+            </ul>
+        </div>
+        <div class="servicio-img">
             <Image
-                src={levtopografico}
-                alt="Levantamiento Topográfico"
+                src={obracarretera}
+                alt="Electricista"
                 class="servicio-image"
-                width={500}
+                width={1000}
                 height={500}
             />
-            <span>Levantamiento Topográfico</span>
-        </article>
-        <article class="servicio obrac-title">
-            <div>
-                <h2>OBRAS DE CARRETERAS</h2>
-            </div>
-        </article>
-        <article class="servicio seg-ocupacional">
-            <Image
-                src={segOcupacional}
-                alt="Seguridad Ocupacional"
-                class="servicio-image"
-                width={500}
-                height={500}
-            />
-            <span>Seguridad Ocupacional</span>
-        </article>
-        <article class="servicio areac-ambiental">
-            <Image
-                src={areaambiental}
-                alt="Área Ambiental"
-                class="servicio-image"
-                width={500}
-                height={500}
-            />
-            <span>Área Ambiental</span>
-        </article>
-        <article class="servicio m-suelos">
-            <Image
-                src={mecsuelos}
-                alt="Mecánica de suelos"
-                class="servicio-image"
-                width={500}
-                height={500}
-            />
-            <span>Mecánica de suelos</span>
-        </article>
-        <article class="servicio enfermeria">
-            <Image
-                src={enfermeria}
-                alt="Enfermería"
-                class="servicio-image"
-                width={500}
-                height={500}
-            />
-            <span>Enfermería</span>
-        </article>
-    </section>
+        </div>
+    </article>
 </section>
 <style>
     .servicio-obras-carretera {
         width: 100%;
-        background-color: #083d63;
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        height: 100%;
+        box-sizing: border-box;
     }
     .servicio-container {
         display: grid;
-        grid-template-columns: repeat(5, 270px);
-        grid-template-rows: repeat(4, 150px);
-        gap: 10px;
-    }
-
-    .lev-topografico {
-        grid-column: span 3 / span 3;
-        grid-row: span 2 / span 2;
-    }
-    .obrac-title {
-        grid-column: span 2 / span 2;
-        grid-column-start: 4;
-    }
-    .seg-ocupacional {
-        grid-column: span 2 / span 2;
-        grid-row: span 2 / span 2;
-        grid-column-start: 2;
-        grid-row-start: 3;
-    }
-    .areac-ambiental {
-        grid-row: span 2 / span 2;
-        grid-column-start: 1;
-        grid-row-start: 3;
-    }
-    .m-suelos {
-        grid-row: span 3 / span 3;
-        grid-column-start: 4;
-        grid-row-start: 2;
-    }
-    .enfermeria {
-        grid-row: span 3 / span 3;
-        grid-column-start: 5;
-        grid-row-start: 2;
-    }
-
-    .servicio {
-        position: relative;
-        border-radius: 15px;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.5rem;
-        text-align: center;
+        grid-template-columns: 1fr 1fr;
+        padding: 30px 60px;
+        gap: 30px;
     }
     .servicio-image {
-        position: absolute;
         width: 100%;
-        height: 100%;
         object-fit: cover;
-        z-index: 1;
-        filter: brightness(0.8);
+        border-radius: 20px;
     }
-    span {
-        position: relative;
-        z-index: 2;
-        color: white;
+    .servicio-detalles{
+        font-size: 1.8rem;
     }
 </style>

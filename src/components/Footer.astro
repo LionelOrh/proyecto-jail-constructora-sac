@@ -1,0 +1,147 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/logo-blanco.png";
+import "bootstrap-icons/font/bootstrap-icons.css";
+---
+
+<section class="footer">
+    <div class="footer-main">
+        <div class="footer-container">
+            <article class="info-container">
+                <div class="logo-container">
+                    <a href="/">
+                        <Image
+                            src={logo}
+                            alt="Logo de JAIL CONSTRUCTORA S.A.C"
+                            class="logo"
+                        />
+                    </a>
+                    <h1 class="name">JAIL CONSTRUCTORA S.A.C</h1>
+                </div>
+                <p>
+                    Contamos con un excelente grupo humano y otorgamos principal
+                    atención a los programas de seguridad y prevención de riesg
+                    os, control de pérdidas y cuidado del medio ambiente.
+                </p>
+                <address class="footer-address">
+                    <a href="tel:51922537939">
+                        <i class="bi bi-whatsapp"></i>+51 922 537 939
+                    </a>
+                    <div class="emails">
+                        <span>
+                            <i class="bi bi-envelope"></i>
+                            jailconstructorasac@gmail.com
+                        </span>
+                        <span>
+                            <i class="bi bi-envelope"></i>
+                            delacruzdelacruzj28@gmail.com
+                        </span>
+                    </div>
+                    <span>
+                        <i class="bi bi-geo-alt-fill"></i>
+                        A.H. Balneario Proyecto Especial Pachacútec Ventanilla /
+                        Prov. Const. Del Callao
+                    </span>
+                </address>
+            </article>
+            <article>
+                <h2>Servicios</h2>
+                <ul>
+                    <li>Obras de edificación</li>
+                    <li>Obras de carreteras</li>
+                    <li>Obras de agua potable y alcantarillado</li>
+                    <li>Laboritario de ensayos</li>
+                    <li>Soluciones integrales para equipos pesandos</li>
+                </ul>
+            </article>
+            <article>
+                <h2>Compañía</h2>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="/nosotros">Nosotros</a></li>
+                        <li><a href="/servicios">Servicios</a></li>
+                        <li><a href="/proyectos">Proyectos</a></li>
+                    </ul>
+                </nav>
+            </article>
+            <article class="redes-sociales">
+                <h2>Redes Sociales</h2>
+                <a
+                    href="https://www.facebook.com/profile.php?id=61576187903218"
+                    target="_blank"><i class="bi bi-facebook"></i></a
+                >
+                <a
+                    href="https://www.linkedin.com/in/jail-constructora-33aa82363/"
+                    target="_blank"><i class="bi bi-linkedin"></i></a
+                >
+            </article>
+        </div>
+    </div>
+    <div class="footer-copy">
+        <i class="bi bi-c-circle"></i><span
+            >Casi todos los derechos reservados</span
+        >
+    </div>
+</section>
+<style>
+    .footer-main {
+        padding: 30px 60px;
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        background: #73b6e6;
+        background: radial-gradient(
+            circle,
+            rgb(24, 106, 165) 94%,
+            rgba(33, 117, 176, 1) 97%,
+            rgba(0, 0, 0, 1) 100%
+        );
+    }
+    .footer-container {
+        display: grid;
+        grid-template-columns: 40% 30% 10% 20%;
+    }
+    .info-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .logo-container {
+        display: flex;
+        align-items: end;
+    }
+
+    .logo-container .logo {
+        width: 40px;
+        height: 40px;
+    }
+    .logo-container h1 {
+        font-size: 24px;
+        color: #000000;
+        margin: 0;
+    }
+    .footer-copy {
+        background-color: #0b5181;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        font-size: 18px;
+        padding: 10px;
+    }
+    address {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+    .emails {
+        display: flex;
+        flex-direction: column;
+    }
+    .redes-sociales a i {
+        font-size: 2rem; /* 32px (por defecto es 1em ~16px) */
+    }
+</style>

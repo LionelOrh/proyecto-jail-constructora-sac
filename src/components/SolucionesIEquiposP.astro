@@ -1,135 +1,51 @@
 ---
 import { Image } from "astro:assets";
-import epmatenimiento from "../assets/equipopesadomatenimiento.webp";
-import fbmecanizacion from "../assets/fabmecanizacion.webp";
-import movtierras from "../assets/movimientostierra.webp";
-import metalmecanica from "../assets/metalmecanica.webp";
-import alquilermaquinaria from "../assets/alquilermaquinaria.webp";
+import equiposPesados from "../assets/equipospesados.webp";
 ---
 
 <section class="servicio-soluciones-integrales">
-    <section class="servicio-container">
-        <article class="servicio s-i-title">
-            <div>
-                <h2>SOLUCIONES INTEGRALES PARA EQUIPOS PESADOS</h2>
-            </div>
-        </article>
-        <article class="servicio m-p-equipos-pesados">
+    <article class="servicio-container">
+        <div class="servicio-img">
             <Image
-                src={epmatenimiento}
-                alt="Mantenimiento preventivo y correctivo de equipos pesados y vehiculos"
+                src={equiposPesados}
+                alt="Electricista"
                 class="servicio-image"
-                width={500}
+                width={1000}
                 height={500}
             />
-            <span
-                >Mantenimiento preventivo y correctivo de equipos pesados y
-                vehiculos</span
-            >
-        </article>
-        <article class="servicio fabricacion-m-p">
-            <Image
-                src={fbmecanizacion}
-                alt="Fabricación y mecanizado de piezas"
-                class="servicio-image"
-                width={500}
-                height={500}
-            />
-            <span>Fabricación y mecanizado de piezas</span>
-        </article>
-
-        <article class="servicio mov-tierras">
-            <Image
-                src={movtierras}
-                alt="Fabricación y mecanizado de piezas"
-                class="servicio-image"
-                width={500}
-                height={500}
-            />
-            <span>Movimientos de tierra</span>
-        </article>
-        <article class="servicio metalmecanica">
-            <Image
-                src={metalmecanica}
-                alt="Metalmecánica"
-                class="servicio-image"
-                width={500}
-                height={500}
-            />
-            <span>Metalmecánica</span>
-        </article>
-
-        <article class="servicio a-m-pesadas-v">
-            <Image
-                src={alquilermaquinaria}
-                alt="a-m-pesadas"
-                class="servicio-image"
-                width={700}
-                height={500}
-            />
-            <span>Alquiler de maquinaría pesada y vehículos </span>
-        </article>
-    </section>
+        </div>
+        <div>
+            <h2 class="servicio-title">Soluciones integrales de equipos pesados</h2>
+            <ul class="servicio-detalles">
+                <li>Mantenimiento Preventivo y Correctivo</li>
+                <li>Fabricación y Mecanizado de Piezas</li>
+                <li>Movimientos de Tierra</li>
+                <li>Metalmecánica</li>
+                <li>Alquiler de Maquinaria Pesada y Vehículos</li>
+            </ul>
+        </div>
+    </article>
 </section>
 <style>
     .servicio-soluciones-integrales {
         width: 100%;
-        background-color: #0b5181;
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        height: 100%;
+        box-sizing: border-box;
     }
     .servicio-container {
         display: grid;
-        grid-template-columns: repeat(3, 450px);
-        grid-template-rows: repeat(5, 140px);
-        gap: 10px;
+        grid-template-columns: 1fr 1fr;
+        padding: 30px 60px;
+        gap: 30px;
     }
-    .m-p-equipos-pesados {
-        grid-row: span 3 / span 3;
-    }
-    .fabricacion-m-p {
-        grid-row: span 2 / span 2;
-    }
-    .mov-tierras {
-        grid-row: span 2 / span 2;
-    }
-    .a-m-pesadas-v {
-        grid-column: span 2 / span 2;
-        grid-row: span 2 / span 2;
-        grid-column-start: 1;
-        grid-row-start: 4;
-    }
-    .metalmecanica {
-        grid-row: span 3 / span 3;
-        grid-column-start: 3;
-        grid-row-start: 3;
-    }
-    .servicio {
-        position: relative;
-        border-radius: 15px;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.5rem;
-        text-align: center;
-    }
-
     .servicio-image {
-        position: absolute;
         width: 100%;
-        height: 100%;
         object-fit: cover;
-        z-index: 1;
-        filter: brightness(0.8);
+        border-radius: 20px;
     }
-    span {
-        position: relative;
-        z-index: 2;
-        color: white;
+    .servicio-detalles{
+        font-size: 1.8rem;
+    }
+    .servicio-title{
     }
 </style>

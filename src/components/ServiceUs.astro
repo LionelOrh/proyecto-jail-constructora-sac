@@ -1,11 +1,13 @@
 ---
 import Carrusel3D from "./Carrusel3d.astro";
 
-import ObrasEdificacion from "./ObrasEdificacion.astro";
-import ObrasCarretera from "./ObrasCarretera.astro";
-import ObrasAlcantarillado from "./ObrasAlcantarillado.astro";
-import EnsayoLaboratorio from "./EnsayoLaboratorio.astro";
-import SolucionesIEquiposP from "./SolucionesIEquiposP.astro";
+import { Image } from "astro:assets";
+import obraEdificacion from "../assets/obraedificacion.webp";
+import obracarretera from "../assets/obracarretera.webp";
+import obraalcantarillado from "../assets/obraalcantarillado.webp";
+import ensayoslaboratorio from "../assets/ensayoslaboratorio.webp";
+import equiposPesados from "../assets/equipospesados.webp";
+
 ---
 
 <section class="servicio-section">
@@ -25,9 +27,7 @@ import SolucionesIEquiposP from "./SolucionesIEquiposP.astro";
         <article class="servicio-container-contratistas">
             <div class="contratista-container">
                 <div class="contratista-btn-title">
-                    <p>
-                        Contratista
-                    </p>
+                    <p>Contratista</p>
                 </div>
                 <h2 class="servicio-contratista-title">
                     Contratistas de Obras Civiles
@@ -43,11 +43,139 @@ import SolucionesIEquiposP from "./SolucionesIEquiposP.astro";
                 </p>
             </div>
 
-            <ObrasEdificacion />
-            <ObrasCarretera />
-            <ObrasAlcantarillado />
-            <EnsayoLaboratorio />
-            <SolucionesIEquiposP />
+            <section class="servicio-obras-edificacion">
+                <article class="servicio-container">
+                    <div class="servicio-img">
+                        <Image
+                            src={obraEdificacion}
+                            alt="Obras de edificación"
+                            class="servicio-image"
+                            width={1000}
+                            height={500}
+                        />
+                    </div>
+                    <div>
+                        <h2 class="servicio-title">Obras de Edificación</h2>
+                        <ul class="servicio-detalles">
+                            <li>Arquitectura</li>
+                            <li>Proveedor de Materiales</li>
+                            <li>Carpintero</li>
+                            <li>Gasfitería</li>
+                            <li>Electricistas</li>
+                            <li>Técnico de Impermeabilización</li>
+                            <li>Delineante (CAD)</li>
+                            <li>Ingeniero Civil</li>
+                            <li>Diseñador y decoración de Interiores</li>
+                            <li>Topografía</li>
+                        </ul>
+                    </div>
+                </article>
+            </section>
+
+            <section class="servicio-obras-carretera">
+                <article class="servicio-container">
+                    <div>
+                        <h2 class="servicio-title" >Obras de carretera</h2>
+                        <ul class="servicio-detalles">
+                            <li>Levantamiento Topográfico</li>
+                            <li>Seguridad Ocupacional</li>
+                            <li>Área Ambiental</li>
+                            <li>Mecánica de Suelos</li>
+                            <li>Enfermería</li>
+                        </ul>
+                    </div>
+                    <div class="servicio-img">
+                        <Image
+                            src={obracarretera}
+                            alt="Electricista"
+                            class="servicio-image"
+                            width={1000}
+                            height={500}
+                        />
+                    </div>
+                </article>
+            </section>
+
+            <section class="servicio-obras-agua-alcantarillado">
+                <article class="servicio-container">
+                    <div class="servicio-img">
+                        <Image
+                            src={obraalcantarillado}
+                            alt="Electricista"
+                            class="servicio-image"
+                            width={1000}
+                            height={500}
+                        />
+                    </div>
+                    <div>
+                        <h2 class="servicio-title">Obras de agua potable y alcantarillado</h2>
+                        <ul class="servicio-detalles">
+                            <li>Levantamiento topográfico</li>
+                            <li>Seguridad Ocupacional</li>
+                            <li>Área Ambiental</li>
+                            <li>Mecánica de Suelos</li>
+                            <li>Enfermería</li>
+                            <li>Ingeniero Civil</li>
+                            <li>Planta de Tratamiento de Aguas Residuales</li>
+                            <li>Planta de Tratamiento de Agua Potable</li>
+                        </ul>
+                    </div>
+                </article>
+            </section>
+
+            <section class="servicio-ensayo-laboratorio">
+                <article class="servicio-container">
+                    <div>
+                        <h2 class="servicio-title">Ensayos de Laboratorio</h2>
+                        <ul class="servicio-detalles">
+                            <li>Ensayos Especiales (ASTM)</li>
+                            <li>Ensayos de Agregados (ASTM/MTC/NTP)</li>
+                            <li>Ensayos de Suelos (ASTM/MTC)</li>
+                            <li>Ensayos de Campo en Suelos</li>
+                            <li>
+                                Ensayos de Concreto Fresco y Endurecido
+                                (ASTM/MTC)
+                            </li>
+                            <li>Ensayos Químicos (ASTM/MTC/NTP)</li>
+                        </ul>
+                    </div>
+                    <div class="servicio-img">
+                        <Image
+                            src={ensayoslaboratorio}
+                            alt="Electricista"
+                            class="servicio-image"
+                            width={1000}
+                            height={500}
+                        />
+                    </div>
+                </article>
+            </section>
+
+            <section class="servicio-soluciones-integrales">
+                <article class="servicio-container">
+                    <div class="servicio-img">
+                        <Image
+                            src={equiposPesados}
+                            alt="Electricista"
+                            class="servicio-image"
+                            width={1000}
+                            height={500}
+                        />
+                    </div>
+                    <div>
+                        <h2 class="servicio-title">
+                            Soluciones integrales de equipos pesados
+                        </h2>
+                        <ul class="servicio-detalles">
+                            <li>Mantenimiento Preventivo y Correctivo</li>
+                            <li>Fabricación y Mecanizado de Piezas</li>
+                            <li>Movimientos de Tierra</li>
+                            <li>Metalmecánica</li>
+                            <li>Alquiler de Maquinaria Pesada y Vehículos</li>
+                        </ul>
+                    </div>
+                </article>
+            </section>
         </article>
         <div class="">
             <div class="">
@@ -84,14 +212,14 @@ import SolucionesIEquiposP from "./SolucionesIEquiposP.astro";
         margin: 0;
         font-size: 60px;
         text-shadow: 1px 1px 2px #000;
-    }.servicio-description-t {
+    }
+    .servicio-description-t {
         margin: 0;
         font-size: 20px;
     }
     .servicio-description {
         margin: 0;
-        font-family:"Noto Sans", sans-serif;
-
+        font-family: "Noto Sans", sans-serif;
     }
 
     .servicio-contratista-title {
@@ -105,11 +233,11 @@ import SolucionesIEquiposP from "./SolucionesIEquiposP.astro";
         display: flex;
         flex-direction: column;
     }
-    .contratista-btn-title{
+    .contratista-btn-title {
         display: flex;
         justify-content: center;
     }
-    .contratista-btn-title p{
+    .contratista-btn-title p {
         font-size: 30px;
         font-weight: bold;
         background-color: rgb(33, 47, 77);
@@ -120,6 +248,26 @@ import SolucionesIEquiposP from "./SolucionesIEquiposP.astro";
     .contratista-container {
         height: 40vh;
         padding: 0 60px;
+    }
+
+    .servicio-obras-edificacion {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+    .servicio-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 30px 60px;
+        gap: 30px;
+    }
+    .servicio-image {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    .servicio-detalles {
+        font-size: 1.8rem;
     }
 
     /**OBRAS DE CARRETERAS */

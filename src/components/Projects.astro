@@ -1,0 +1,229 @@
+---
+import Image from "astro/components/Image.astro"
+import instalacion from "../assets/instalacion-agua.webp"
+import ampliacion from "../assets/ampliacion.webp"
+import aalcantarillado from "../assets/a-alcantarillado.webp"
+import consorcio from "../assets/consorcio.webp"
+import antiplano from "../assets/antiplano.webp"
+---
+
+<section>
+    <section class="project-header">
+        <div class="info-project">
+            <span>
+                La empresa “JAIL CONSTRUCTORA S.A.C” Posee experiencia en
+                prestación de servicios en ejecución de obras civiles,
+                carreteras, obras hidráulicas, saneamiento urbano y rural,
+                voladura de roca y alquiler de maquinaria pesada.
+            </span>
+        </div>
+        <div class="projects-detail">
+            <div class="title-project">
+                <p>Nuestros Projectos y Experiencia</p>
+            </div>
+            <section class="projects-container">
+                <article class="project">
+                    <div>
+                        <Image
+                            src={instalacion}
+                            alt={""}
+                            class={"project-img"}
+                            width={300}
+                            
+                        />
+                        <p>
+                            Instalación del Sistema de Agua Potable Y
+                            Alcantarillado para el Esquema de Oquendo, Santa
+                            Rosa y El Naranjal (Sect.251,252,256 y 257)
+                        </p>
+                        <p>Distrito San Martin de Porres Y Callao</p>
+                    </div>
+                </article>
+                <article class="project">
+                    <div>
+                        <Image
+                            src={ampliacion}
+                            alt={""}
+                            class={"project-img"}
+                            width={300}
+                        />
+                        <p>
+                            Ampliación y mejoramiento Integral de sistema de
+                            agua potable y alcantarillado de la localidad de
+                            Tumán.
+                        </p>
+                        <p>Chiclayo Lambayeque</p>
+                    </div>
+                </article>
+                <article class="project">
+                    <div>
+                        <Image
+                            src={aalcantarillado}
+                            alt={""}
+                            class={"project-img"}
+                            width={300}
+                        />
+                        <p>
+                            Ampliación y mejoramiento Integral de sistema de
+                            agua potable y alcantarillado.
+                        </p>
+                        <p>Anexos del Distrito de Carabayllo</p>
+                    </div>
+                </article>
+                <article class="project">
+                    <div>
+                        <Image
+                            src={consorcio}
+                            alt={""}
+                            class={"project-img"}
+                            width={300}
+                        />
+                        <p>
+                            Consorcio del Norte Instalación del Sistema de Agua
+                            Potable y Alcantarillado de las Localidades de
+                            Pativilca, Santa Clara, Simey, Los- Aguilares, San
+                            Luis, Pitipo.
+                        </p>
+                        <p>Distrito de Lambayeque-Ferreñafe</p>
+                    </div>
+                </article>
+                <article class="project">
+                    <div>
+                        <Image
+                            src={antiplano}
+                            alt={""}
+                            class={"project-img"}
+                            width={300}
+                        />
+                        <p>
+                            Consorcio Altiplano Saneamiento y Obras Civiles, de
+                            las localidades San Francisco, San Vicente Verlin y
+                            Rosario Pampa.
+                        </p>
+                        <p>Departamento de Ayacucho distrito de Anco</p>
+                    </div>
+                </article>
+                <article class="project">
+                    <div>
+                        <Image
+                            src={antiplano}
+                            alt={""}
+                            class={"project-img"}
+                            width={300}
+                        />
+                        <p>
+                            Consorcio Altiplano Saneamiento y Obras Civiles, de
+                            las localidades San Francisco, San Vicente Verlin y
+                            Rosario Pampa.
+                        </p>
+                        <p>Departamento de Ayacucho distrito de Anco</p>
+                    </div>
+                </article>
+                <article class="project">
+                    <div>
+                        <Image
+                            src={antiplano}
+                            alt={""}
+                            class={"project-img"}
+                            width={300}
+                        />
+                        <p>
+                            Consorcio Altiplano Saneamiento y Obras Civiles, de
+                            las localidades San Francisco, San Vicente Verlin y
+                            Rosario Pampa.
+                        </p>
+                        <p>Departamento de Ayacucho distrito de Anco</p>
+                    </div>
+                </article>
+                <article class="project">
+                    <div>
+                        <Image
+                            src={antiplano}
+                            alt={""}
+                            class={"project-img"}
+                            width={300}
+                        />
+                        <p>
+                            Consorcio Altiplano Saneamiento y Obras Civiles, de
+                            las localidades San Francisco, San Vicente Verlin y
+                            Rosario Pampa.
+                        </p>
+                        <p>Departamento de Ayacucho distrito de Anco</p>
+                    </div>
+                </article>
+                
+            </section>
+        </div>
+    </section>
+</section>
+<style>
+    .project-header {
+        position: relative;
+        background-image: url("../assets/banner-proyects.webp");
+        background-position: center;
+        height: 70vh;
+        background-size: cover;
+        z-index: 0;
+    }
+    .project-header::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+    .info-project {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 60px;
+    }
+    .info-project span {
+        font-size: 2rem;
+        color: white;
+    }
+    .title-project {
+        display: flex;
+        justify-content: center;
+    }
+    .title-project p {
+        background-color: #212f4d;
+        font-size: 30px;
+        padding: 10px;
+        border-radius: 20px 0 20px 0;
+        color: white;
+    }
+    .projects-detail {
+        padding: 0 60px;
+    }
+    .projects-container {
+        display: flex;
+        max-width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 30px;
+    }
+    .project {
+        width: 300px;
+        height: 400px;
+        box-shadow: 0px 2px 20px rgb(13, 86, 134);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .project-img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+    .project p,
+    .project span {
+        padding: 10px 15px;
+        margin: 0;
+    }
+    
+</style>
