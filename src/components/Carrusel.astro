@@ -1,0 +1,124 @@
+---
+import { Image } from "astro:assets";
+import consultoria1 from "../assets/consultoria1.webp";
+import consultoria2 from "../assets/consultoria2.webp";
+import consultoria3 from "../assets/consultoria3.webp";
+import consultoria4 from "../assets/consultoria4.webp";
+import consultoria5 from "../assets/consultoria5.webp";
+import consultoria6 from "../assets/consultoria6.webp";
+import consultoria7 from "../assets/consultoria7.webp";
+import consultoria8 from "../assets/consultoria8.webp";
+import consultoria9 from "../assets/consultoria9.webp";
+const tags = [
+    {
+        text: "Planeamiento y evaluación de métodos de ejecución de Obras Civiles.",
+        img: consultoria1,
+    },
+    { text: "Diseño y Evaluación de Planos de vivienda.", img: consultoria2 },
+    {
+        text: "Diseño y optimización de proyectos de construcción.",
+        img: consultoria3,
+    },
+    {
+        text: "Diseño de voladura controlada en zonas críticas, de contorno y/o precorte.",
+        img: consultoria4,
+    },
+    {
+        text: "Diseño de voladura no convencional en obras Civiles, demoliciones.",
+        img: consultoria5,
+    },
+    {
+        text: "Evaluación de impactos medioambientales de proyectos Civiles.",
+        img: consultoria6,
+    },
+    {
+        text: "Evaluación de Rendimiento de maquinaria pesada.",
+        img: consultoria7,
+    },
+    {
+        text: "Capacitación, entrenamiento, conferencias y seminarios.",
+        img: consultoria8,
+    },
+    { text: "Cotización de Obras Civiles.", img: consultoria9 },
+];
+---
+
+<section class="tag-list">
+    <div class="inner">
+        {
+            tags.map((tag) => (
+                <div class="tag">
+                    <Image src={tag.img} alt={tag.text} class="bg" />
+                    <div class="overlay" />
+                    <span>{tag.text}</span>
+                </div>
+            ))
+        }
+    </div>
+    <div class="fade"></div>
+</section>
+<style>
+    .tag-list {
+        width: 90%;
+        position: relative;
+        overflow: hidden;
+        padding: 20px;
+    }
+    .inner {
+        width: fit-content;
+        display: flex;
+        gap: 1rem;
+        animation: loop 20s linear infinite;
+    }
+    .tag {
+        position: relative;
+        width: 15rem;
+        height: 12rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 0.4rem;
+    }
+    .tag .bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+    .tag .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+
+    .tag span {
+        z-index: 2;
+        color: white;
+        text-align: center;
+        font-size: 18px;
+        padding: 10px;
+    }
+    .fade {
+        position: absolute;
+        background: linear-gradient(
+            90deg,
+            #1e293b,
+            transparent 10%,
+            transparent 90%,
+            #1e293b
+        );
+        inset: 0;
+        pointer-events: none;
+    }
+    @keyframes loop {
+        0% {
+            transform: translateX(10%);
+        }
+        100% {
+            transform: translateX(-30%);
+        }
+    }
+</style>
