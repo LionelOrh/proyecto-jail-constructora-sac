@@ -1,229 +1,310 @@
 ---
-import Image from "astro/components/Image.astro"
-import instalacion from "../assets/instalacion-agua.webp"
-import ampliacion from "../assets/ampliacion.webp"
-import aalcantarillado from "../assets/a-alcantarillado.webp"
-import consorcio from "../assets/consorcio.webp"
-import antiplano from "../assets/antiplano.webp"
+import Image from "astro/components/Image.astro";
+import instalacion from "../assets/instalacion-agua.webp";
+import ampliacion from "../assets/ampliacion.webp";
+import aalcantarillado from "../assets/a-alcantarillado.webp";
+import consorcio from "../assets/consorcio.webp";
+import antiplano from "../assets/antiplano.webp";
+import proyectSpecial from "../assets/proyectSpecial.webp";
+import almacaes from "../assets/almacaes.webp";
+import habilitacion from "../assets/habitacion.webp";
+import chiclayo from "../assets/chiclayo.webp";
+import carapongo from "../assets/carapongo.webp";
+import ramon from "../assets/ramon.webp";
+import chilca from "../assets/chilca.webp";
+import BriefcaseBusinessIcon from "../components/svg/BriefcaseBusinessIcon.astro";
+import ArrowRight from "../components/svg/ArrowRight.astro";
+import Banner from "../assets/banner-proyects.webp";
+
+const projDremy = [
+    {
+        img: instalacion,
+        desc: "Instalación del sistema de agua potable y alcantarillado en los sectores 251, 252, 256 y 257, beneficiando a Oquendo, Santa Rosa y El Naranjal.",
+        ubi: "San Martín, Callao",
+    },
+    {
+        img: ampliacion,
+        desc: "Ampliación y mejoramiento del sistema de agua potable y alcantarillado en la localidad de Tumán, garantizando acceso seguro y sostenible para los residentes.",
+        ubi: "Tumán, Lambayeque",
+    },
+    {
+        img: aalcantarillado,
+        desc: "Obras de ampliación y mejora de los servicios de agua potable y alcantarillado en los anexos del distrito de Carabayllo, beneficiando a sus habitantes.",
+        ubi: "Carabayllo, Lima",
+    },
+    {
+        img: consorcio,
+        desc: "Instalación del sistema de agua potable y alcantarillado en Pativilca, Santa Clara, Simey, Los Aguilares, San Luis y Pitipo, mejorando la calidad de vida.",
+        ubi: "Lambayeque, Ferreñafe",
+    },
+    {
+        img: antiplano,
+        desc: "Ejecución de obras civiles y saneamiento integral en las localidades de San Francisco, San Vicente Verlin y Rosario Pampa, promoviendo la salud pública.",
+        ubi: "Anco, Ayacucho",
+    },
+    {
+        img: proyectSpecial,
+        desc: "Ampliación de redes de agua potable y alcantarillado como parte del proyecto especial en beneficio de la población local y mejora del entorno.",
+        ubi: "SJL, Los Ángeles",
+    },
+    {
+        img: almacaes,
+        desc: "Trabajos de ampliación y mejora del sistema de agua potable y alcantarillado en el esquema de San Juan de Amancaes, para servicio continuo.",
+        ubi: "Amancaes, Lima",
+    },
+    {
+        img: habilitacion,
+        desc: "Habilitación urbana e industrial en la zona de Huachipa, Petromax 1.ª Etapa, incluyendo obras sanitarias básicas de agua potable y alcantarillado.",
+        ubi: "Huachipa, Lima",
+    },
+];
+
+const projJail = [
+    {
+        img: chiclayo,
+        desc: "Instalación del sistema de agua potable y alcantarillado en el esquema de Pomalca, proporcionando acceso seguro al recurso para la población local.",
+        ubi: "Pomalca, Chiclayo",
+    },
+    {
+        img: carapongo,
+        desc: "Ampliación y mejora integral del sistema de agua potable y alcantarillado en la localidad de Carapongo, mejorando la infraestructura sanitaria de la zona.",
+        ubi: "Carapongo, Lima",
+    },
+    {
+        img: ramon,
+        desc: "Mejoramiento y ampliación del sistema de agua potable y alcantarillado en San Ramón, asegurando una red eficiente y accesible para todos los vecinos.",
+        ubi: "San Ramón, Junín",
+    },
+    {
+        img: chilca,
+        desc: "Obras de ampliación y mejora del sistema de alcantarillado en la localidad de Chilca, fortaleciendo la infraestructura sanitaria y el bienestar comunitario.",
+        ubi: "Chilca, Lima",
+    },
+];
 ---
 
-<section>
-    <section class="project-header">
-        <div class="info-project">
-            <span>
-                La empresa “JAIL CONSTRUCTORA S.A.C” Posee experiencia en
-                prestación de servicios en ejecución de obras civiles,
-                carreteras, obras hidráulicas, saneamiento urbano y rural,
-                voladura de roca y alquiler de maquinaria pesada.
-            </span>
+<section class="projects-section">
+    <div class="projects-hero">
+        <Image src={Banner} alt="" class="bg"/>
+        <div class="overlay"></div>
+        <span class="projects-hero__description"> 
+            La empresa "JAIL CONSTRUCTORA S.A.C." posee experiencia en la
+            prestación de servicios, ejecución de obras civiles, carreteras,
+            obras hidráulicas, saneamiento urbano y rural, voladura de roca, y
+            alquiler de maquinaria pesada.
+        </span>
+    </div>
+    <div class="projects-container">
+        <div class="projects-title">
+            <p>Nuestros Proyectos y Experiencia</p>
         </div>
-        <div class="projects-detail">
-            <div class="title-project">
-                <p>Nuestros Projectos y Experiencia</p>
-            </div>
-            <section class="projects-container">
-                <article class="project">
-                    <div>
-                        <Image
-                            src={instalacion}
-                            alt={""}
-                            class={"project-img"}
-                            width={300}
-                            
-                        />
-                        <p>
-                            Instalación del Sistema de Agua Potable Y
-                            Alcantarillado para el Esquema de Oquendo, Santa
-                            Rosa y El Naranjal (Sect.251,252,256 y 257)
-                        </p>
-                        <p>Distrito San Martin de Porres Y Callao</p>
-                    </div>
-                </article>
-                <article class="project">
-                    <div>
-                        <Image
-                            src={ampliacion}
-                            alt={""}
-                            class={"project-img"}
-                            width={300}
-                        />
-                        <p>
-                            Ampliación y mejoramiento Integral de sistema de
-                            agua potable y alcantarillado de la localidad de
-                            Tumán.
-                        </p>
-                        <p>Chiclayo Lambayeque</p>
-                    </div>
-                </article>
-                <article class="project">
-                    <div>
-                        <Image
-                            src={aalcantarillado}
-                            alt={""}
-                            class={"project-img"}
-                            width={300}
-                        />
-                        <p>
-                            Ampliación y mejoramiento Integral de sistema de
-                            agua potable y alcantarillado.
-                        </p>
-                        <p>Anexos del Distrito de Carabayllo</p>
-                    </div>
-                </article>
-                <article class="project">
-                    <div>
-                        <Image
-                            src={consorcio}
-                            alt={""}
-                            class={"project-img"}
-                            width={300}
-                        />
-                        <p>
-                            Consorcio del Norte Instalación del Sistema de Agua
-                            Potable y Alcantarillado de las Localidades de
-                            Pativilca, Santa Clara, Simey, Los- Aguilares, San
-                            Luis, Pitipo.
-                        </p>
-                        <p>Distrito de Lambayeque-Ferreñafe</p>
-                    </div>
-                </article>
-                <article class="project">
-                    <div>
-                        <Image
-                            src={antiplano}
-                            alt={""}
-                            class={"project-img"}
-                            width={300}
-                        />
-                        <p>
-                            Consorcio Altiplano Saneamiento y Obras Civiles, de
-                            las localidades San Francisco, San Vicente Verlin y
-                            Rosario Pampa.
-                        </p>
-                        <p>Departamento de Ayacucho distrito de Anco</p>
-                    </div>
-                </article>
-                <article class="project">
-                    <div>
-                        <Image
-                            src={antiplano}
-                            alt={""}
-                            class={"project-img"}
-                            width={300}
-                        />
-                        <p>
-                            Consorcio Altiplano Saneamiento y Obras Civiles, de
-                            las localidades San Francisco, San Vicente Verlin y
-                            Rosario Pampa.
-                        </p>
-                        <p>Departamento de Ayacucho distrito de Anco</p>
-                    </div>
-                </article>
-                <article class="project">
-                    <div>
-                        <Image
-                            src={antiplano}
-                            alt={""}
-                            class={"project-img"}
-                            width={300}
-                        />
-                        <p>
-                            Consorcio Altiplano Saneamiento y Obras Civiles, de
-                            las localidades San Francisco, San Vicente Verlin y
-                            Rosario Pampa.
-                        </p>
-                        <p>Departamento de Ayacucho distrito de Anco</p>
-                    </div>
-                </article>
-                <article class="project">
-                    <div>
-                        <Image
-                            src={antiplano}
-                            alt={""}
-                            class={"project-img"}
-                            width={300}
-                        />
-                        <p>
-                            Consorcio Altiplano Saneamiento y Obras Civiles, de
-                            las localidades San Francisco, San Vicente Verlin y
-                            Rosario Pampa.
-                        </p>
-                        <p>Departamento de Ayacucho distrito de Anco</p>
-                    </div>
-                </article>
-                
+        <div>
+            <h2 class="projects-company__title">
+                <BriefcaseBusinessIcon />
+                Dremy Servicios Generales S.A.C.
+            </h2>
+            <section class="projects-company">
+                {
+                    projDremy.map((projDremy) => (
+                        <article class="project-card">
+                            <div>
+                                <Image
+                                    src={projDremy.img}
+                                    alt={projDremy.desc}
+                                    class={"project-card__image"}
+                                    width={300}
+                                />
+                                <div class="project-card__content">
+                                    <p
+                                        itemprop="location"
+                                        class="project-card__location"
+                                    >
+                                        {projDremy.ubi}
+                                    </p>
+                                    <p
+                                        itemprop="description"
+                                        class="project-card__description"
+                                    >
+                                        {projDremy.desc}
+                                    </p>
+
+                                    <div class="project-card__action">
+                                        <div class="project-card__button">
+                                            <span>Ver más</span>
+                                            <span class="project-card__button-icon">
+                                                <ArrowRight />
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    ))
+                }
             </section>
         </div>
-    </section>
+        <div>
+            <h2 class="projects-company__title">
+                <BriefcaseBusinessIcon />
+                JAIL Servicios Generales S.A.C.
+            </h2>
+            <section class="projects-company">
+                {
+                    projJail.map((projJail) => (
+                        <article class="project-card">
+                            <div>
+                                <Image
+                                    src={projJail.img}
+                                    alt={projJail.desc}
+                                    class={"project-card__image"}
+                                    width={300}
+                                />
+                                <div class="project-card__content">
+                                    <p
+                                        itemprop="location"
+                                        class="project-card__location"
+                                    >
+                                        {projJail.ubi}
+                                    </p>
+                                    <p
+                                        itemprop="description"
+                                        class="project-card__description"
+                                    >
+                                        {projJail.desc}
+                                    </p>
+
+                                    <div class="project-card__action">
+                                        <div class="project-card__button">
+                                            <span>Ver más</span>
+                                            <span class="project-card__button-icon">
+                                                <ArrowRight />
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    ))
+                }
+            </section>
+        </div>
+    </div>
 </section>
 <style>
-    .project-header {
+    .projects-hero {
         position: relative;
-        background-image: url("../assets/banner-proyects.webp");
-        background-position: center;
+        max-width: 100%;
         height: 70vh;
-        background-size: cover;
-        z-index: 0;
-    }
-    .project-header::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: -1;
-    }
-    .info-project {
-        width: 50%;
-        height: 100%;
         display: flex;
         align-items: center;
-        justify-content: center;
-        padding: 0px 60px;
     }
-    .info-project span {
-        font-size: 2rem;
+    .bg{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+    .overlay{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+    .projects-hero span{
+        z-index: 2;
+        font-size: 1.5rem;
         color: white;
+        font-family: "Noto Sans", sans-serif;
+        position: relative;
+        display: flex;
+        padding: 60px;
+        width: 50%;
+        
     }
-    .title-project {
+    .projects-title {
         display: flex;
         justify-content: center;
     }
-    .title-project p {
+    .projects-title p {
         background-color: #212f4d;
         font-size: 30px;
         padding: 10px;
         border-radius: 20px 0 20px 0;
         color: white;
-    }
-    .projects-detail {
-        padding: 0 60px;
+        margin-bottom: 0;
     }
     .projects-container {
         display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 8rem;
+    }
+    .projects-company__title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-size: 3rem;
+    }
+
+    .projects-company {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         max-width: 100%;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: center;
         gap: 30px;
     }
-    .project {
-        width: 300px;
-        height: 400px;
+    .project-card {
+        width: 100%;
         box-shadow: 0px 2px 20px rgb(13, 86, 134);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         border-radius: 10px;
         overflow: hidden;
+        background-color: #0a2b47;
     }
-    .project-img {
+    .project-card__image {
         width: 100%;
         height: 250px;
         object-fit: cover;
     }
-    .project p,
-    .project span {
-        padding: 10px 15px;
+    .project-card__location {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+    .project-card__content {
+        padding: 20px;
+        font-family: "Noto Sans", sans-serif;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .project-card__content p {
         margin: 0;
     }
-    
+    .project-card__button {
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+        gap: 10px;
+        color: white;
+        background-color: #0877c1;
+        padding: 5px 10px;
+        border-radius: 1rem;
+        width: fit-content;
+    }
+    .project-card__button-icon {
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        color: black;
+        padding: 5px;
+        align-items: center;
+        justify-content: center;
+    }
 </style>

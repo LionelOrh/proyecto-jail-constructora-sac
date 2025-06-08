@@ -1,0 +1,9 @@
+---
+import Copy from '../svg/Copy.astro';
+import CopyCheck from '../svg/CopyCheck.astro';
+import { useState } from 'react';
+const [copied, setCopied] = useState(false);
+
+// ID o texto a copiar (puedes personalizarlo)
+const contentToCopy = "Texto que quieres copiar"; // o pasa como prop
+---

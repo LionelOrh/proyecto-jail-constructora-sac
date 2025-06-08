@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <section class="hero-container">
@@ -12,14 +13,14 @@
             Infraestructura de Calidad
         </p>
         <div class="buttons">
-            <button class="btn primary">Contáctanos</button>
-            <button class="btn secondary">¿Quiénes somos?</button>
+            <a class="btn primary">Contáctanos</a>
+
+            <a class="btn secondary" href="/nosotros">¿Quiénes somos?</a>
         </div>
     </article>
-
 </section>
 <style>
-    *{
+    * {
         box-sizing: border-box;
     }
     .hero-container {
@@ -27,7 +28,7 @@
         height: 100vh;
         background-image: url("../assets/banner.webp");
         background-size: cover;
-        padding: 0 60px ;
+        padding: 0 60px;
     }
 
     .hero {
@@ -36,18 +37,16 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        
     }
 
     .title {
         color: #20a6ff;
         font-family: "Poppins", sans-serif;
         font-size: 60px;
-    
     }
 
     .title span {
-        color: #FFFFFF;
+        color: #ffffff;
         font-family: "Poppins", sans-serif;
     }
 
@@ -66,18 +65,21 @@
     }
 
     .btn {
-        padding: 12px 24px;
-        border-radius: 20px 0 020px 0;
-        font-size: 16px;
+        padding: 10px 40px;
+        border-radius: 20px 0 20px 0;
+        font-size: 2rem;
         font-weight: 600;
         cursor: pointer;
         transition: all 0.3s ease;
+        text-decoration: none;
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        align-items: center;
     }
 
     .primary {
         background-color: #0b5181;
         color: white;
-        border: none;
     }
 
     .primary:hover {
@@ -107,7 +109,6 @@
         height: 530px;
         object-fit: cover;
         object-position: center top;
-
 
         border-radius: 5px 5px 5px 40%;
         position: relative;

@@ -2,141 +2,319 @@
 import { Image } from "astro:assets";
 import logo from "../assets/logo-blanco.png";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import copy from "../components/svg/Copy.astro";
+import Copy from "../components/svg/Copy.astro";
 ---
 
-<section class="footer">
-    <div class="footer-main">
-        <div class="footer-container">
-            <article class="info-container">
-                <div class="logo-container">
-                    <a href="/">
+<section class="footer-section">
+    <div class="footer-main-container">
+        <div class="footer-grid-container">
+            <!-- Bloque de Información de la Empresa -->
+            <article class="footer-company-info">
+                <div class="footer-logo-wrapper">
+                    <a
+                        href="/"
+                        class="footer-logo-link"
+                        aria-label="Inicio - JAIL CONSTRUCTORA S.A.C"
+                    >
                         <Image
                             src={logo}
-                            alt="Logo de JAIL CONSTRUCTORA S.A.C"
-                            class="logo"
-                        />
+                            alt="Logo de JAIL CONSTRUCTORA S.A.C - Especialistas en construcción"
+                            class="footer-logo-img"
+                            width="40"
+                            height="40"
+                            loading="lazy"
+                        /><h1 class="footer-company-name">
+                            JAIL CONSTRUCTORA S.A.C
+                        </h1>
                     </a>
-                    <h1 class="name">JAIL CONSTRUCTORA S.A.C</h1>
                 </div>
-                <p>
+                <p class="footer-company-description">
                     Contamos con un excelente grupo humano y otorgamos principal
-                    atención a los programas de seguridad y prevención de riesg
-                    os, control de pérdidas y cuidado del medio ambiente.
+                    atención a los programas de seguridad y prevención de
+                    riesgos, control de pérdidas y cuidado del medio ambiente.
                 </p>
-                <address class="footer-address">
-                    <a href="tel:51922537939">
-                        <i class="bi bi-whatsapp"></i>+51 922 537 939
+                <address class="footer-contact-info">
+                    <a
+                        href="tel:51922537939"
+                        class="footer-contact-link footer-phone-link"
+                    >
+                        <i class="bi bi-whatsapp footer-contact-icon"></i>+51
+                        922 537 939
                     </a>
-                    <div class="emails">
-                        <span>
-                            <i class="bi bi-envelope"></i>
-                            jailconstructorasac@gmail.com
-                        </span>
-                        <span>
-                            <i class="bi bi-envelope"></i>
-                            delacruzdelacruzj28@gmail.com
-                        </span>
+                    <div class="footer-email-container">
+                        <div class="footer-email-item">
+                            <i class="bi bi-envelope footer-contact-icon"></i>
+                            <span class="span-email">jailconstructorasac@gmail.com</span>
+                            <Copy textToCopy="jailconstructorasac@gmail.com" className="footer-copy-icon"/>
+                        </div>
+                        <div class="footer-email-item">
+                            <i class="bi bi-envelope footer-contact-icon"></i>
+                            <span class="span-email">delacruzdelacruzj28@gmail.com</span>
+                            <Copy textToCopy="delacruzdelacruzj28@gmail.com" className="footer-copy-icon" />
+                        </div>
                     </div>
-                    <span>
-                        <i class="bi bi-geo-alt-fill"></i>
+                    <span class="footer-address-item">
+                        <i class="bi bi-geo-alt-fill footer-contact-icon"></i>
                         A.H. Balneario Proyecto Especial Pachacútec Ventanilla /
                         Prov. Const. Del Callao
                     </span>
                 </address>
             </article>
-            <article>
-                <h2>Servicios</h2>
-                <ul>
-                    <li>Obras de edificación</li>
-                    <li>Obras de carreteras</li>
-                    <li>Obras de agua potable y alcantarillado</li>
-                    <li>Laboritario de ensayos</li>
-                    <li>Soluciones integrales para equipos pesandos</li>
+
+            <!-- Bloque de Servicios -->
+            <article class="footer-services-section">
+                <h2 class="footer-section-title">Servicios</h2>
+                <ul class="footer-services-list">
+                    <li class="footer-service-item">Obras de edificación</li>
+                    <li class="footer-service-item">Obras de carreteras</li>
+                    <li class="footer-service-item">
+                        Obras de agua potable y alcantarillado
+                    </li>
+                    <li class="footer-service-item">Laboratorio de ensayos</li>
+                    <li class="footer-service-item">
+                        Soluciones integrales para equipos pesados
+                    </li>
                 </ul>
             </article>
-            <article>
-                <h2>Compañía</h2>
-                <nav class="nav">
-                    <ul>
-                        <li><a href="/nosotros">Nosotros</a></li>
-                        <li><a href="/servicios">Servicios</a></li>
-                        <li><a href="/proyectos">Proyectos</a></li>
+
+            <!-- Bloque de Navegación -->
+            <article class="footer-navigation-section">
+                <h2 class="footer-section-title">Compañía</h2>
+                <nav
+                    class="footer-navigation"
+                    aria-label="Navegación secundaria"
+                >
+                    <ul class="footer-nav-list">
+                        <li class="footer-nav-item">
+                            <a href="/nosotros" class="footer-nav-link"
+                                >Nosotros</a
+                            >
+                        </li>
+                        <li class="footer-nav-item">
+                            <a href="/servicios" class="footer-nav-link"
+                                >Servicios</a
+                            >
+                        </li>
+                        <li class="footer-nav-item">
+                            <a href="/proyectos" class="footer-nav-link"
+                                >Proyectos</a
+                            >
+                        </li>
                     </ul>
                 </nav>
             </article>
-            <article class="redes-sociales">
-                <h2>Redes Sociales</h2>
-                <a
-                    href="https://www.facebook.com/profile.php?id=61576187903218"
-                    target="_blank"><i class="bi bi-facebook"></i></a
-                >
-                <a
-                    href="https://www.linkedin.com/in/jail-constructora-33aa82363/"
-                    target="_blank"><i class="bi bi-linkedin"></i></a
-                >
+
+            <!-- Bloque de Redes Sociales -->
+            <article class="footer-social-section">
+                <h2 class="footer-section-title">Redes Sociales</h2>
+                <div class="footer-social-links">
+                    <a
+                        href="https://www.facebook.com/profile.php?id=61576187903218"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="footer-social-link"
+                        aria-label="Síguenos en Facebook"
+                    >
+                        <i class="bi bi-facebook footer-social-icon"></i>
+                    </a>
+                    <a
+                        href="https://www.linkedin.com/in/jail-constructora-33aa82363/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="footer-social-link"
+                        aria-label="Conéctate con nosotros en LinkedIn"
+                    >
+                        <i class="bi bi-linkedin footer-social-icon"></i>
+                    </a>
+                </div>
             </article>
         </div>
     </div>
-    <div class="footer-copy">
-        <i class="bi bi-c-circle"></i><span
+    <div class="footer-copyright">
+        <i class="bi bi-c-circle footer-copyright-icon"></i>
+        <span class="footer-copyright-text"
             >Casi todos los derechos reservados</span
         >
     </div>
 </section>
+
 <style>
-    .footer-main {
+    /* Estilos base del footer */
+    .footer-section {
+        font-family: "Arial", sans-serif;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    .footer-main-container {
         padding: 30px 60px;
-        height: 100%;
         width: 100%;
         box-sizing: border-box;
         background: #73b6e6;
-       
-    }
-    .footer-container {
-        display: grid;
-        grid-template-columns: 40% 30% 10% 20%;
-    }
-    .info-container {
-        display: flex;
-        flex-direction: column;
-    }
-    .logo-container {
-        display: flex;
-        align-items: end;
     }
 
-    .logo-container .logo {
+    .footer-grid-container {
+        display: grid;
+        grid-template-columns: 40% 30% 10% 20%;
+        gap: 30px;
+    }
+
+    .footer-company-info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer-logo-wrapper {
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+    }
+
+    .footer-logo-img {
         width: 40px;
         height: 40px;
+        object-fit: contain;
     }
-    .logo-container h1 {
-        font-size: 24px;
-        color: #000000;
+
+    .footer-company-name {
+        font-size: 1.5rem;
+        color: #000;
+        height: 20px;
+        margin: 0;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .footer-company-description {
+        margin: 0;
+        font-size: 0.9rem;
+    }
+    .footer-logo-link {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Estilos para la información de contacto */
+    .footer-contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        font-style: normal;
+    }
+
+    .footer-contact-link,
+    .footer-address-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #000;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-contact-link:hover {
+        color: #0b5181;
+        text-decoration: none;
+    }
+
+    .footer-contact-icon {
+        font-size: 1.2rem;
+    }
+
+    .footer-email-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-email-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Estilos para la sección de servicios */
+    .footer-services-list {
+        list-style: none;
+        padding: 0;
         margin: 0;
     }
-    .footer-copy {
+
+    .footer-service-item {
+        margin-bottom: 8px;
+        position: relative;
+        padding-left: 15px;
+    }
+
+    .footer-service-item::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #0b5181;
+    }
+
+    /* Estilos para la navegación */
+    .footer-nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-nav-item {
+        margin-bottom: 10px;
+    }
+
+    .footer-nav-link {
+        color: #000;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-nav-link:hover {
+        color: #0b5181;
+        text-decoration: underline;
+    }
+
+
+    /* Estilos para redes sociales */
+    .footer-social-links {
+        display: flex;
+        gap: 15px;
+    }
+
+    .footer-social-icon {
+        font-size: 2rem;
+        color: #000;
+        transition: color 0.3s ease;
+    }
+
+    .footer-social-link:hover .footer-social-icon {
+        color: #0b5181;
+    }
+
+    /* Estilos para el copyright */
+    .footer-copyright {
         background-color: #0b5181;
         color: #fff;
         display: flex;
         justify-content: center;
+        align-items: center;
         gap: 10px;
-        font-size: 18px;
-        padding: 10px;
+        font-size: 1rem;
+        padding: 15px;
     }
-    address {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+
+    .footer-copyright-icon {
+        font-size: 1rem;
     }
-    a {
-        text-decoration: none;
-        color: #000;
-    }
-    .emails {
-        display: flex;
-        flex-direction: column;
-    }
-    .redes-sociales a i {
-        font-size: 2rem; /* 32px (por defecto es 1em ~16px) */
+
+    .footer-section-title {
+        font-size: 1.2rem;
+        margin-top: 0;
+        margin-bottom: 15px;
+        color: #0b5181;
     }
 </style>

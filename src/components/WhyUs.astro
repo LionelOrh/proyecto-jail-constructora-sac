@@ -4,128 +4,125 @@ import puntualidad from "../assets/puntualidad.webp";
 import eficiencia from "../assets/eficiencia.webp";
 import responsabilidad from "../assets/responsabilidad.webp";
 import respeto from "../assets/respeto.webp";
+const valores = [
+    {
+        img: responsabilidad,
+        text: "Responsabilidad",
+    },
+    {
+        img: eficiencia,
+        text: "Eficiencia",
+    },
+    {
+        img: respeto,
+        text: "Respeto",
+    },
+    {
+        img: puntualidad,
+        text: "Puntualidad",
+    },
+];
 ---
 
-<section>
-    <article class="why-us">
-        <p>
-            JALI CONSTRUCTORA S.A.C. es su mejor aliado en proyectos de
-            construcción porque combinamos experiencia demostrada (con más de 11
-            obras ejecutadas en agua potable, edificación y saneamiento),
-            compromiso inquebrantable con plazos y presupuestos, especialización
-            técnica en ingeniería civil y arquitectura, estrictos estándares de
-            seguridad y sostenibilidad, y un equipo profesional dedicado a
-            superar expectativas. No solo entregamos obras, sino soluciones
-            integrales que transforman comunidades y generan confianza duradera.
-        </p>
-        <h1>¿Por qué elegirnos?</h1>
+<section class="valores-section">
+    <article class="valores-section__intro">
+        <div class="valores-section__container__descripcion">
+            <p class="valores-section__descripcion">
+                <span> JALI CONSTRUCTORA S.A.C.</span> es su mejor aliado en proyectos
+                de construcción porque combinamos experiencia demostrada (con más
+                de 11 obras ejecutadas en agua potable, edificación y saneamiento),
+                <span>compromiso inquebrantable</span> con plazos y presupuestos, especialización
+                técnica en ingeniería civil y arquitectura, estrictos estándares
+                de seguridad y sostenibilidad, y un equipo profesional dedicado a
+                superar expectativas. No solo entregamos obras, sino soluciones integrales
+                que transforman comunidades y generan confianza duradera.
+            </p>
+        </div>
+        <div class="valores-section__container__titulo">
+            <h3 class="valores-section__titulo">¿Por qué elegirnos?</h3>
+        </div>
     </article>
-    <article class="card-container">
-        <div class="card">
-            <div class="image-wrapper">
-                <Image
-                    src={responsabilidad}
-                    alt="Imagen de responsabilidad"
-                    width={300}
-                    height={200}
-                    class="valores"
-                />
-                <div class="text-overlay">Responsabilidad</div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="image-wrapper">
-                <Image
-                    src={eficiencia}
-                    alt="Imagen de eficiencia"
-                    width={300}
-                    height={200}
-                    class="valores"
-                />
-                <div class="text-overlay">Eficiencia</div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="image-wrapper">
-                <Image
-                    src={respeto}
-                    alt="Imagen de respecto"
-                    width={300}
-                    height={200}
-                    class="valores"
-                />
-                <div class="text-overlay">Respeto</div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="image-wrapper">
-                <Image
-                    src={puntualidad}
-                    alt="Imagen de puntualidad"
-                    width={300}
-                    height={200}
-                    class="valores"
-                />
-                <div class="text-overlay">Puntualidad</div>
-            </div>
-        </div>
+    <article class="valores-section__cards">
+        {
+            valores.map((valores) => (
+                <div class="valor-card">
+                    <div class="valor-card__imagen-wrapper">
+                        <Image
+                            src={valores.img}
+                            alt={valores.text}
+                            width={300}
+                            height={200}
+                            class="valor-card__imagen"
+                        />
+                        <div class="valor-card__overlay">
+                            <span class="valor-card__nombre">
+                                {valores.text}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            ))
+        }
     </article>
 </section>
 <style>
-    section {
+    .valores-section {
         padding: 30px 60px;
         background-color: #f0f0f0;
+        height: 100vh;
     }
-    .why-us {
-        display: flex;
-        max-width: 90%;
-        gap: 20px;
+    .valores-section__intro {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
     }
-    .why-us h1 {
+    .valores-section__titulo {
         font-family: "Poppins", sans-serif;
-        font-size: 80px;
-        color: #1a2251;
+        font-size: 8rem;
+        background: linear-gradient(to right, #293e49, #0a71ac);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         margin: 0;
     }
-    .why-us p {
-        font-family: "Poppins", sans-serif;
-        font-size: 17px;
+    .valores-section__descripcion {
+        font-family: "Noto Sans", sans-serif;
+        font-size: 1.4rem;
         color: #383838;
         margin: 20px 0 30px;
         line-height: 1.4;
     }
+    .valores-section__descripcion span{
+        font-weight: bold;
+    }
 
-    .card-container {
+    .valores-section__cards {
         display: flex;
-        gap: 20px;
         justify-content: space-between;
         flex-wrap: wrap;
+        margin-top: 4rem;
     }
-    .card {
-        position: relative;
-    }
-    .image-wrapper {
+    .valor-card__imagen-wrapper {
         position: relative;
         display: block;
         overflow: hidden;
-        width: 300px;
-        height: 200px;
+        width: 320px;
+        height: 250px;
         border-radius: 5%;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 
         transition: transform 0.3s ease;
     }
-    .image-wrapper:hover {
+    .valor-card__imagen-wrapper:hover {
         transform: scale(1.05);
         transition: transform 0.3s ease;
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
     }
-    .valores {
+    .valor-card__imagen {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
-    .text-overlay {
+    .valor-card__overlay {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -134,4 +131,5 @@ import respeto from "../assets/respeto.webp";
         font-size: 24px;
         font-weight: bold;
     }
+    
 </style>
