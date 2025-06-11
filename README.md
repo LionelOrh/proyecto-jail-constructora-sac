@@ -1,48 +1,27 @@
-# Astro Starter Kit: Basics
+# PROYECTO-JAIL-CONSTRUCTORASAC  
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+**Building Tomorrow's Infrastructure, Today's Innovation**  
+![image](https://github.com/user-attachments/assets/9436e673-6828-4b5b-a8f3-31fab467c58e)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 📌 Descripción  
+Plataforma innovadora para la industria de construcción que integra tecnologías modernas para optimizar procesos y mejorar eficiencia.  
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## 🚀 Tecnologías  
+<div align="center">  
+  <img src="https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json" alt="JSON">  
+  <img src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown" alt="Markdown">  
+  <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm" alt="npm">  
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript" alt="JavaScript">  
+  <img src="https://img.shields.io/badge/Swiper-6332F6?style=for-the-badge&logo=swiper" alt="Swiper">  
+  <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap" alt="Bootstrap">  
+  <img src="https://img.shields.io/badge/Astro-FF5D01?style=for-the-badge&logo=astro" alt="Astro">  
+  <img src="https://img.shields.io/badge/YAML-CB171E?style=for-the-badge&logo=yaml" alt="YAML">  
+</div>  
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## ⚙️ Instalación  
+```bash
+git clone https://github.com/tu-usuario/PROYECTO-JAIL-CONSTRUCTORASAC.git  
+cd PROYECTO-JAIL-CONSTRUCTORASAC  
+npm install  
+npm run dev  
