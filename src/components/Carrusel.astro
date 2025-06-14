@@ -43,8 +43,10 @@ const tags = [
 ];
 ---
 
-<section class="tag-list">
-    <div class="inner">
+<section class="container">
+    <div class="tag-list">
+        <span class="title-container">Consultoria</span>
+        <div class="inner">
         {
             tags.map((tag) => (
                 <div class="tag">
@@ -56,13 +58,30 @@ const tags = [
         }
     </div>
     <div class="fade"></div>
+    </div>
 </section>
 <style>
+    .container{
+        width: 100%;
+        height: 50vh;
+        background: #1e293b;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
     .tag-list {
         width: 90%;
-        position: relative;
+        position: absolute;
         overflow: hidden;
-        padding: 50px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .title-container{
+        color: white;
+        font-size: 2rem;
+        margin-bottom: 20px;
     }
     .inner {
         width: fit-content;
