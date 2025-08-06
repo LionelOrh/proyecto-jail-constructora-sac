@@ -1,102 +1,131 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../assets/logo.webp";
-import barra from "../assets/barra-abajo.webp";
 ---
 
-<section class="header">
-    <div class="header__branding">
-        <a href="/" class="branding__link">
-            <Image src={logo} alt="Logo" class="branding__logo" />
-        </a>
-        <h1 class="branding__name">JAIL CONSTRUCTORA S.A.C</h1>
-        <div class="branding__divider">
-            <Image
-                src={barra}
-                alt="Divisor decorativo"
-                class="branding__barra"
-            />
+<header class="header" id="header">
+    <div class="header__container">
+        <div class="header__branding">
+            <a href="/" class="branding__link">
+                <Image src={logo} alt="Logo JAIL Constructora" class="branding__logo" />
+                <span class="branding__text">
+                    <span class="branding__name">JAIL</span>
+                    <span class="branding__subtitle">CONSTRUCTORA S.A.C</span>
+                </span>
+            </a>
         </div>
-    </div>
 
-    <nav class="header__nav nav">
-        <ul class="nav__list">
-            <li class="nav__item">
-                <a href="/nosotros" class="nav__link nosotros">Nosotros</a>
-            </li>
-            <li class="nav__item">
-                <a href="/servicios" class="nav__link servicios">Servicios</a>
-            </li>
-            <li class="nav__item">
-                <a href="/proyectos" class="nav__link proyectos">Proyectos</a>
-            </li>
-            <li class="nav__contact">
-                <a href="#" class="nav__link contacto">Contacto</a>
-            </li>
-        </ul>
-    </nav>
-</section>
+        <nav class="header__nav" id="nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="/nosotros" class="nav__link">Nosotros</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/servicios" class="nav__link">Servicios</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/proyectos" class="nav__link">Proyectos</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#contacto" class="nav__link nav__link--cta">Contacto</a>
+                </li>
+            </ul>
+            
+            <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </div>
+</header>
 <style>
     .header {
         position: fixed;
         top: 0;
         left: 0;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        padding: 20px 60px;
         width: 100%;
-        height: 120px;
-        box-sizing: border-box;
         z-index: 1000;
-        background: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.8),
-            rgba(0, 0, 0, 0)
-        );
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .header.scrolled {
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .header__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+        height: 80px;
     }
 
     .header__branding {
-        display: grid;
-        grid-template-columns: 60px 400px;
-        grid-template-rows: 60px 30px;
+        display: flex;
+        align-items: center;
+    }
+
+    .branding__link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.3s ease;
+    }
+
+    .branding__link:hover {
+        transform: translateY(-2px);
     }
 
     .branding__logo {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    .branding__text {
+        margin-left: 1rem;
+        display: flex;
+        flex-direction: column;
     }
 
     .branding__name {
         font-family: "Alfa Slab One", serif;
-        font-size: 24px;
-        color: #f0f8ff;
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: #0b5181;
+        line-height: 1;
         margin: 0;
-        display: flex;
-        align-items: end;
     }
 
-    .branding__divider {
-        grid-column: span 2 / span 2;
-        width: 100%;
-        height: 20px;
-    }
-
-    .branding__barra {
-        width: 100%;
-        height: 100%;
+    .branding__subtitle {
+        font-size: 0.75rem;
+        color: #293e49;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        margin-top: 2px;
     }
 
     .header__nav {
         display: flex;
-        justify-content: end;
         align-items: center;
     }
 
     .nav__list {
         display: flex;
         list-style: none;
-        gap: 20px;
         margin: 0;
+        padding: 0;
+        gap: 2rem;
+        align-items: center;
     }
 
     .nav__item {
@@ -105,44 +134,248 @@ import barra from "../assets/barra-abajo.webp";
 
     .nav__link {
         text-decoration: none;
-        color: #f0f8ff;
-        font-size: 20px;
-        font-weight: bold;
+        color: #293e49;
+        font-size: 0.95rem;
+        font-weight: 500;
+        padding: 0.5rem 0;
+        position: relative;
+        transition: all 0.3s ease;
     }
 
-    .nav__item:hover .nav__link {
-        color: #f0f8ff;
-        transition: 0.5s all ease;
+    .nav__link:hover {
+        color: #20a6ff;
     }
 
-    .nav__item::after {
+    .nav__link::after {
         content: "";
         position: absolute;
-        width: 100%;
-        transform: scaleX(0);
+        width: 0;
         height: 2px;
-        bottom: -5px;
-        left: 0;
-        background-color: aqua;
-        transform-origin: bottom right;
-        transition: transform 0.5s ease-in-out;
+        bottom: 0;
+        left: 50%;
+        background: linear-gradient(90deg, #20a6ff, #0a71ac);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
     }
 
-    .nav__item:hover::after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
+    .nav__link:hover::after {
+        width: 100%;
     }
-    .contacto {
-        padding: 10px;
-        border-radius: 20px;
-        background: #020024;
-        background: linear-gradient(
-            90deg,
-            #30297E 0%,
-            #291E68 35%,
-            #201253 100%
-        );
-        color: #fff;
+
+    .nav__link--cta {
+        background: linear-gradient(135deg, #0b5181, #083d63);
+        color: white !important;
+        padding: 0.75rem 1.5rem;
+        border-radius: 25px;
+        font-weight: 600;
+        box-shadow: 0 4px 15px rgba(11, 81, 129, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    .nav__link--cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(11, 81, 129, 0.4);
+        background: linear-gradient(135deg, #083d63, #0b5181);
+    }
+
+    .nav__link--cta::after {
+        display: none;
+    }
+
+    .nav__toggle {
+        display: none;
+        flex-direction: column;
+        background: none;
         border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        gap: 4px;
+    }
+
+    .nav__toggle span {
+        width: 25px;
+        height: 3px;
+        background: #293e49;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+        transform-origin: center;
+    }
+
+    .nav__toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .nav__toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav__toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .header__container {
+            padding: 1rem;
+        }
+
+        .branding__text {
+            margin-left: 0.75rem;
+        }
+
+        .branding__name {
+            font-size: 1.25rem;
+        }
+
+        .branding__subtitle {
+            font-size: 0.7rem;
+        }
+
+        .nav__toggle {
+            display: flex;
+        }
+
+        .nav__list {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 80px);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: 2rem;
+            gap: 1rem;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .nav__list.active {
+            transform: translateX(0);
+        }
+
+        .nav__item {
+            padding: 0.5rem 2rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        .nav__link {
+            font-size: 1.1rem;
+            display: block;
+            padding: 1rem 0;
+        }
+
+        .nav__link--cta {
+            margin: 1rem 2rem;
+            display: inline-block;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .header__container {
+            padding: 0.75rem 1rem;
+            height: 70px;
+        }
+
+        .branding__logo {
+            width: 40px;
+            height: 40px;
+        }
+
+        .branding__name {
+            font-size: 1.1rem;
+        }
+
+        .branding__subtitle {
+            font-size: 0.65rem;
+        }
+
+        .nav__list {
+            top: 70px;
+            height: calc(100vh - 70px);
+        }
     }
 </style>
+
+<script>
+    // Header scroll effect
+    const header = document.getElementById('header');
+    let lastScrollY = window.scrollY;
+
+    function handleScroll() {
+        const currentScrollY = window.scrollY;
+        
+        // Add scrolled class when scrolling down
+        if (currentScrollY > 50) {
+            header?.classList.add('scrolled');
+        } else {
+            header?.classList.remove('scrolled');
+        }
+        
+        lastScrollY = currentScrollY;
+    }
+
+    // Mobile menu toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navList = document.querySelector('.nav__list');
+    const navLinks = document.querySelectorAll('.nav__link');
+
+    function toggleMobileMenu() {
+        navToggle?.classList.toggle('active');
+        navList?.classList.toggle('active');
+        
+        // Prevent body scroll when menu is open
+        if (navList?.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    function closeMobileMenu() {
+        navToggle?.classList.remove('active');
+        navList?.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    // Event listeners
+    window.addEventListener('scroll', handleScroll);
+    navToggle?.addEventListener('click', toggleMobileMenu);
+    
+    // Close mobile menu when clicking on nav links
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!header?.contains(e.target as Node)) {
+            closeMobileMenu();
+        }
+    });
+
+    // Handle resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            closeMobileMenu();
+        }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const href = (e.currentTarget as HTMLAnchorElement).getAttribute('href');
+            const target = href ? document.querySelector(href) : null;
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>

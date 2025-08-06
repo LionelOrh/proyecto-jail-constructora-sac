@@ -4,132 +4,383 @@ import puntualidad from "../assets/puntualidad.webp";
 import eficiencia from "../assets/eficiencia.webp";
 import responsabilidad from "../assets/responsabilidad.webp";
 import respeto from "../assets/respeto.webp";
+
 const valores = [
     {
         img: responsabilidad,
         text: "Responsabilidad",
+        description: "Cumplimos compromisos y garantizamos calidad en cada proyecto que desarrollamos"
     },
     {
         img: eficiencia,
         text: "Eficiencia",
+        description: "Optimizamos recursos y tiempo para entregar resultados excepcionales siempre"
     },
     {
         img: respeto,
         text: "Respeto",
+        description: "Valoramos nuestro equipo, clientes y medio ambiente en cada decisión tomada"
     },
     {
         img: puntualidad,
         text: "Puntualidad",
+        description: "Entregamos proyectos en tiempo y forma, sin comprometer nunca la calidad"
     },
 ];
 ---
 
-<section class="valores-section">
-    <article class="valores-section__intro">
-        <div class="valores-section__container__descripcion">
-            <p class="valores-section__descripcion">
-                <span> JALI CONSTRUCTORA S.A.C.</span> es su mejor aliado en proyectos
-                de construcción porque combinamos experiencia demostrada (con más
-                de 11 obras ejecutadas en agua potable, edificación y saneamiento),
-                <span>compromiso inquebrantable</span> con plazos y presupuestos, especialización
-                técnica en ingeniería civil y arquitectura, estrictos estándares
-                de seguridad y sostenibilidad, y un equipo profesional dedicado a
-                superar expectativas. No solo entregamos obras, sino soluciones integrales
-                que transforman comunidades y generan confianza duradera.
-            </p>
+<section class="why-us">
+    <div class="why-us__container">
+        <div class="why-us__header">
+            <div class="why-us__content">
+                <h2 class="why-us__title">¿Por qué elegirnos?</h2>
+                <div class="why-us__title-accent"></div>
+                <p class="why-us__description">
+                    <strong>JAIL CONSTRUCTORA S.A.C.</strong> es su mejor aliado en proyectos de construcción porque combinamos 
+                    <span class="highlight">experiencia demostrada</span> con más de 11 obras ejecutadas en agua potable, 
+                    edificación y saneamiento, <span class="highlight">compromiso inquebrantable</span> con plazos y presupuestos, 
+                    especialización técnica en ingeniería civil y arquitectura.
+                </p>
+                <p class="why-us__description">
+                    Mantenemos estrictos estándares de seguridad y sostenibilidad, con un equipo profesional dedicado a 
+                    superar expectativas. No solo entregamos obras, sino <span class="highlight">soluciones integrales</span> 
+                    que transforman comunidades y generan confianza duradera.
+                </p>
+            </div>
         </div>
-        <div class="valores-section__container__titulo">
-            <h3 class="valores-section__titulo">¿Por qué elegirnos?</h3>
-        </div>
-    </article>
-    <article class="valores-section__cards">
-        {
-            valores.map((valores) => (
-                <div class="valor-card">
-                    <div class="valor-card__imagen-wrapper">
-                        <Image
-                            src={valores.img}
-                            alt={valores.text}
-                            width={300}
-                            height={200}
-                            class="valor-card__imagen"
-                        />
-                        <div class="valor-card__overlay">
-                            <span class="valor-card__nombre">
-                                {valores.text}
-                            </span>
+
+        <div class="why-us__values">
+            <h3 class="why-us__values-title">Nuestros Valores</h3>
+            <div class="values-grid">
+                {
+                    valores.map((valor, index) => (
+                        <div class="value-card" style={`--delay: ${index * 0.1}s`}>
+                            <div class="value-card__image-wrapper">
+                                <Image
+                                    src={valor.img}
+                                    alt={valor.text}
+                                    width={400}
+                                    height={300}
+                                    class="value-card__image"
+                                />
+                                <div class="value-card__overlay">
+                                    <h4 class="value-card__title">{valor.text}</h4>
+                                    <p class="value-card__description">{valor.description}</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            ))
-        }
-    </article>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
 </section>
 <style>
-    .valores-section {
-        padding: 30px 60px;
-        background-color: #f0f0f0;
-        height: 100vh;
-    }
-    .valores-section__intro {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-    .valores-section__titulo {
-        font-family: "Poppins", sans-serif;
-        font-size: 8rem;
-        background: linear-gradient(to right, #293e49, #0a71ac);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin: 0;
-    }
-    .valores-section__descripcion {
-        font-family: "Noto Sans", sans-serif;
-        font-size: 1.4rem;
-        color: #383838;
-        margin: 20px 0 30px;
-        line-height: 1.4;
-    }
-    .valores-section__descripcion span{
-        font-weight: bold;
-    }
-
-    .valores-section__cards {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        margin-top: 4rem;
-    }
-    .valor-card__imagen-wrapper {
+    .why-us {
+        padding: 6rem 0;
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
         position: relative;
-        display: block;
         overflow: hidden;
-        width: 320px;
-        height: 250px;
-        border-radius: 5%;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
 
-        transition: transform 0.3s ease;
+    .why-us::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #20a6ff, transparent);
     }
-    .valor-card__imagen-wrapper:hover {
-        transform: scale(1.05);
-        transition: transform 0.3s ease;
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+
+    .why-us__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
     }
-    .valor-card__imagen {
+
+    .why-us__header {
+        text-align: center;
+        margin-bottom: 5rem;
+        animation: fadeInUp 0.8s ease-out;
+    }
+
+    .why-us__content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .why-us__title {
+        font-family: "Poppins", sans-serif;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 700;
+        color: #293e49;
+        margin-bottom: 1rem;
+        position: relative;
+    }
+
+    .why-us__title-accent {
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, #20a6ff, #0a71ac);
+        margin: 0 auto 2rem;
+        border-radius: 2px;
+        animation: expandWidth 1s ease-out 0.5s both;
+    }
+
+    .why-us__description {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.125rem;
+        line-height: 1.8;
+        color: #64748b;
+        margin-bottom: 1.5rem;
+        text-align: left;
+    }
+
+    .why-us__description strong {
+        color: #293e49;
+        font-weight: 600;
+    }
+
+    .highlight {
+        color: #0a71ac;
+        font-weight: 600;
+        position: relative;
+    }
+
+    .why-us__values {
+        animation: fadeInUp 0.8s ease-out 0.3s both;
+    }
+
+    .why-us__values-title {
+        font-family: "Poppins", sans-serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: #293e49;
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+    }
+
+    .why-us__values-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(90deg, #20a6ff, #0a71ac);
+        border-radius: 2px;
+    }
+
+    .values-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .value-card {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: slideInUp 0.6s ease-out var(--delay) both;
+    }
+
+    .value-card__image-wrapper {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        height: 280px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        cursor: pointer;
+    }
+
+    .value-card__image-wrapper:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .value-card__image {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transition: transform 0.4s ease;
     }
-    .valor-card__overlay {
+
+    .value-card__image-wrapper:hover .value-card__image {
+        transform: scale(1.1);
+    }
+
+    .value-card__overlay {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(11, 81, 129, 0.9) 0%, rgba(32, 166, 255, 0.6) 60%, transparent 100%);
+        padding: 1.5rem;
         color: white;
-        font-size: 24px;
-        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        transition: all 0.4s ease;
     }
-    
+
+    .value-card__image-wrapper:hover .value-card__overlay {
+        background: linear-gradient(to top, rgba(8, 61, 99, 0.95) 0%, rgba(10, 113, 172, 0.8) 70%, transparent 100%);
+        padding: 2rem 1.5rem 1.5rem;
+    }
+
+    .value-card__title {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.375rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: #ffffff;
+        text-align: center;
+        line-height: 1.3;
+        text-shadow: 0 2px 8px rgba(11, 81, 129, 0.8);
+    }
+
+    .value-card__description {
+        font-family: "Poppins", sans-serif;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.95);
+        margin: 0;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.4s ease 0.2s;
+    }
+
+    .value-card__image-wrapper:hover .value-card__description {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Animaciones */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes expandWidth {
+        from {
+            width: 0;
+        }
+        to {
+            width: 80px;
+        }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .values-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .value-card__image-wrapper {
+            height: 300px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .why-us {
+            padding: 4rem 0;
+        }
+
+        .why-us__container {
+            padding: 0 1rem;
+        }
+
+        .why-us__header {
+            margin-bottom: 3rem;
+        }
+
+        .why-us__title {
+            font-size: 2.5rem;
+        }
+
+        .why-us__description {
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .values-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .value-card__image-wrapper {
+            height: 250px;
+        }
+
+        .value-card__overlay {
+            background: linear-gradient(to top, rgba(11, 81, 129, 0.95) 0%, rgba(32, 166, 255, 0.5) 70%, transparent 100%);
+            padding: 1.5rem;
+        }
+
+        .value-card__description {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .why-us {
+            padding: 3rem 0;
+        }
+
+        .why-us__title {
+            font-size: 2rem;
+        }
+
+        .why-us__values-title {
+            font-size: 1.5rem;
+        }
+
+        .values-grid {
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+        }
+
+        .value-card__image-wrapper {
+            height: 220px;
+        }
+
+        .value-card__overlay {
+            background: linear-gradient(to top, rgba(8, 61, 99, 0.95) 0%, rgba(32, 166, 255, 0.4) 80%, transparent 100%);
+            padding: 1.25rem;
+        }
+
+        .value-card__title {
+            font-size: 1.25rem;
+        }
+
+        .value-card__description {
+            font-size: 0.8rem;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 </style>

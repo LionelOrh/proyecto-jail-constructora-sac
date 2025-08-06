@@ -3,62 +3,259 @@ import { Image } from "astro:assets";
 import obracarretera from "../assets/obracarretera.webp";
 ---
 
-<section class="servicio-obras-carretera">
-    <article class="servicio-container">
-        <div class="servicio-detalles">
-            <h2 class="servicio-title">OBRAS EN CARRETERA</h2>
-            <ul class="list-detalles">
-                <li>Levantamiento Topográfico</li>
-                <li>Seguridad Ocupacional</li>
-                <li>Área Ambiental</li>
-                <li>Mecánica de Suelos</li>
-                <li>Enfermería</li>
-            </ul>
+<section class="carretera">
+    <div class="carretera__container">
+        <div class="carretera__content">
+            <div class="carretera__header">
+                <span class="carretera__badge">Infraestructura</span>
+                <h3 class="carretera__title">Obras en Carretera</h3>
+                <div class="carretera__title-accent"></div>
+            </div>
+            <div class="carretera__services">
+                <div class="carretera__service-item">
+                    <span class="carretera__service-icon">📐</span>
+                    <span>Levantamiento Topográfico</span>
+                </div>
+                <div class="carretera__service-item">
+                    <span class="carretera__service-icon">🦺</span>
+                    <span>Seguridad Ocupacional</span>
+                </div>
+                <div class="carretera__service-item">
+                    <span class="carretera__service-icon">🌱</span>
+                    <span>Gestión Ambiental</span>
+                </div>
+                <div class="carretera__service-item">
+                    <span class="carretera__service-icon">🔬</span>
+                    <span>Mecánica de Suelos</span>
+                </div>
+                <div class="carretera__service-item">
+                    <span class="carretera__service-icon">🏥</span>
+                    <span>Servicios de Enfermería</span>
+                </div>
+            </div>
         </div>
-        <div class="servicio-img">
+        <div class="carretera__image-wrapper">
+            <div class="carretera__image-overlay"></div>
             <Image
                 src={obracarretera}
-                alt="Obra de carretera"
-                class="servicio-image"
-                width={1000}
-                height={380}
+                alt="Obras en carretera - JAIL CONSTRUCTORA S.A.C"
+                class="carretera__image"
+                width={600}
+                height={400}
             />
         </div>
-    </article>
+    </div>
 </section>
 <style>
-    .servicio-obras-carretera {
+    /* Variables locales coherentes */
+    :root {
+        --primary-blue: #293e49;
+        --medium-blue: #0a71ac;
+        --accent-blue: #20a6ff;
+        --dark-blue: #083d63;
+        --text-dark: #2c3e50;
+        --text-light: #7f8c8d;
+        --bg-light: #f8f9fa;
+        --white: #ffffff;
+        --font-primary: "Poppins", sans-serif;
+        --font-secondary: "Noto Sans", sans-serif;
+        --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+        --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .carretera {
         width: 100%;
-        height: 60vh;
-        background-color: white;
-    }
-    .servicio-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        gap: 30px;
         height: 100%;
+        padding: 2.5rem;
+        background: var(--white);
+        border-radius: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
     }
-    .servicio-detalles {
-        padding-left: 60px;
+
+    .carretera__container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        height: 100%;
+        flex: 1;
+        max-width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
     }
-    .servicio-img {
-        height: 380px; /* Altura fija para el contenedor de la imagen */
-        overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
-        border-radius: 100px 0px 0px 100px;
+
+    .carretera__content {
+        padding: 0 1rem;
+        order: 2;
+        flex: 1;
+        box-sizing: border-box;
     }
-    .servicio-image {
+
+    .carretera__image-wrapper {
+        position: relative;
+        height: 200px;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow-soft);
+        transition: var(--transition);
+        order: 1;
+        flex-shrink: 0;
+        margin: 0 1rem;
+    }
+
+    .carretera__image-wrapper:hover {
+        transform: scale(1.02);
+        box-shadow: var(--shadow-medium);
+    }
+
+    .carretera__image-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            135deg,
+            rgba(41, 62, 73, 0.3) 0%,
+            rgba(10, 113, 172, 0.2) 100%
+        );
+        z-index: 1;
+        opacity: 0;
+        transition: var(--transition);
+    }
+
+    .carretera__image-wrapper:hover .carretera__image-overlay {
+        opacity: 1;
+    }
+
+    .carretera__image {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transition: var(--transition);
     }
-    .list-detalles {
-        font-size: 1.5rem;
-        font-family: "Noto Sans", sans-serif;
+
+    .carretera__header {
+        margin-bottom: 1.5rem;
+        text-align: center;
     }
-    .servicio-title {
-        font-size: 2.4rem;
-        font-weight: bold;
-        margin: 0;
+
+    .carretera__badge {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--medium-blue) 0%, var(--accent-blue) 100%);
+        color: var(--white);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-family: var(--font-primary);
+        font-weight: 600;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 1rem;
+        box-shadow: var(--shadow-soft);
+    }
+
+    .carretera__title {
+        font-family: var(--font-primary);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 700;
+        color: var(--primary-blue);
+        margin: 0 0 1rem;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+    }
+
+    .carretera__title-accent {
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--medium-blue) 0%, var(--accent-blue) 100%);
+        border-radius: 2px;
+        margin: 0 auto 1rem;
+    }
+
+    .carretera__services {
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        flex: 1;
+    }
+
+    .carretera__service-item {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 0.8rem;
+        background: var(--bg-light);
+        border-radius: 12px;
+        font-family: var(--font-secondary);
+        font-size: 0.85rem;
+        color: var(--text-dark);
+        transition: var(--transition);
+        border-left: 4px solid transparent;
+    }
+
+    .carretera__service-item:hover {
+        background: var(--white);
+        border-left-color: var(--medium-blue);
+        transform: translateX(8px);
+        box-shadow: var(--shadow-soft);
+    }
+
+    .carretera__service-icon {
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        background: linear-gradient(135deg, var(--medium-blue) 0%, var(--accent-blue) 100%);
+        border-radius: 8px;
+        flex-shrink: 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .carretera {
+            padding: 1.5rem;
+        }
+
+        .carretera__container {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .carretera__content {
+            order: 2;
+        }
+
+        .carretera__image-wrapper {
+            height: 250px;
+            order: 1;
+        }
+
+        .carretera__service-item {
+            padding: 0.8rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .carretera {
+            padding: 1rem;
+        }
+
+        .carretera__image-wrapper {
+            height: 200px;
+        }
+
+        .carretera__service-item {
+            font-size: 0.85rem;
+            padding: 0.7rem;
+        }
+
+        .carretera__service-icon {
+            width: 32px;
+            height: 32px;
+            font-size: 1.1rem;
+        }
     }
 </style>

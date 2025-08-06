@@ -8,134 +8,410 @@ import SolucionesIEquiposP from "./SolucionesIEquiposP.astro";
 import Carrusel from "./Carrusel.astro";
 ---
 
-<section class="servicio-section">
-    <div class="servicio-header">
-        <h2 class="servicio-title">Nuestros Servicios</h2>
-        <p class="servicio-description-t">
-            En JAIL CONSTRUCTORA S.A.C, ofrecemos una amplia gama de servicios
-            para satisfacer las necesidades de nuestros clientes. Nos
-            especializamos en la construcción de obras de infraestructura, así
-            como en el mantenimiento y reparación de equipos pesados. Nuestro
-            equipo de profesionales altamente capacitados está comprometido en
-            brindar soluciones integrales y de calidad en cada uno de nuestros
-            proyectos.
-        </p>
+<section class="services">
+    <div class="services__hero">
+        <div class="services__hero-overlay"></div>
+        <div class="services__hero-content">
+            <h1 class="services__title">Nuestros Servicios</h1>
+            <p class="services__description">
+                En <strong>JAIL CONSTRUCTORA S.A.C</strong>, ofrecemos una amplia gama de servicios para satisfacer 
+                las necesidades de nuestros clientes. Nos especializamos en la construcción de obras de infraestructura, 
+                así como en el mantenimiento y reparación de equipos pesados.
+            </p>
+            <p class="services__description">
+                Nuestro equipo de profesionales altamente capacitados está comprometido en brindar soluciones 
+                integrales y de calidad en cada uno de nuestros proyectos.
+            </p>
+        </div>
     </div>
-    <section class="servicio-content">
-        <article class="servicio-container-contratistas">
-            <div class="contratista-container">
-                <div class="contratista-btn-title">
-                    <p>Contratista</p>
-                </div>
-                <h2 class="servicio-contratista-title">
-                    Contratistas de Obras Civiles
-                </h2>
-                <p class="servicio-description">
-                    En <strong>JAIL CONSTRUCTORA S.A.C</strong>, contamos con un
-                    equipo de contratistas altamente calificados en cada área de
-                    ejecución, garantizando precisión técnica, cumplimiento de
-                    normativas y estándares de calidad en todos nuestros
-                    proyectos. Nuestros profesionales trabajan bajo un modelo
-                    integrado que combina experiencia en campo con innovación
-                    tecnológica.
+
+    <div class="services__container">
+        <section class="services__intro">
+            <div class="services__intro-content">
+                <span class="services__badge">Contratista</span>
+                <h2 class="services__section-title">Contratistas de Obras Civiles</h2>
+                <div class="services__title-accent"></div>
+                <p class="services__intro-description">
+                    En <strong>JAIL CONSTRUCTORA S.A.C</strong>, contamos con un equipo de contratistas altamente 
+                    calificados en cada área de ejecución, garantizando precisión técnica, cumplimiento de normativas 
+                    y estándares de calidad en todos nuestros proyectos.
+                </p>
+                <p class="services__intro-description">
+                    Nuestros profesionales trabajan bajo un modelo integrado que combina experiencia en campo 
+                    con innovación tecnológica para entregar resultados excepcionales.
                 </p>
             </div>
+        </section>
 
-            <div class="servicios">
-                <div class="obras"><ObrasEdificacion /></div>
-                <div class="obras"><ObrasCarretera /></div>
-                <div class="obras"><ObrasAlcantarillado /></div>
-                <div class="obras"><EnsayoLaboratorio /></div>
-                <div class="obras"><SolucionesIEquiposP /></div>
+        <section class="services__grid">
+            <div class="services__grid-container">
+                <div class="service__card">
+                    <ObrasEdificacion />
+                </div>
+                <div class="service__card">
+                    <ObrasCarretera />
+                </div>
+                <div class="service__card">
+                    <ObrasAlcantarillado />
+                </div>
+                <div class="service__card">
+                    <EnsayoLaboratorio />
+                </div>
+                <div class="service__card">
+                    <SolucionesIEquiposP />
+                </div>
             </div>
-        </article>
-        <div class="carrusel">
-            <Carrusel/>
-        </div>
-    </section>
+        </section>
+
+        <section class="services__showcase">
+            <div class="services__carousel">
+                <Carrusel />
+            </div>
+        </section>
+    </div>
 </section>
 <style>
-    .servicio-header {
+    /* Variables globales */
+    :root {
+        --primary-blue: #293e49;
+        --medium-blue: #0a71ac;
+        --accent-blue: #20a6ff;
+        --dark-blue: #083d63;
+        --text-dark: #2c3e50;
+        --text-light: #7f8c8d;
+        --bg-light: #f8f9fa;
+        --border-light: #e9ecef;
+        --white: #ffffff;
+        --font-primary: "Poppins", sans-serif;
+        --font-secondary: "Noto Sans", sans-serif;
+        --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+        --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .services {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Hero Section */
+    .services__hero {
         position: relative;
         background-image: url("../assets/banner-servicios.webp");
         background-size: cover;
-        width: 100%;
-        height: 60vh;
+        background-position: center;
+        background-attachment: fixed;
+        height: 80vh;
         display: flex;
-        flex-direction: column;
+        align-items: center;
         justify-content: center;
-        padding: 20px 60px;
-        box-sizing: border-box;
-        color: white;
-        z-index: 0;
-        gap: 20px;
+        text-align: center;
+        color: var(--white);
     }
-    .servicio-header::before {
+
+    .services__hero-overlay {
+        position: absolute;
+        inset: 0;
+                background: linear-gradient(135deg, rgba(11, 81, 129, 0.8), rgba(8, 61, 99, 0.9));
+
+        z-index: 1;
+    }
+
+    .services__hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        padding: 0 2rem;
+        animation: fadeInUp 1s ease-out;
+    }
+
+    .services__title {
+        font-family: "Poppins", sans-serif;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 700;
+        margin: 0 0 2rem;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        letter-spacing: -0.02em;
+        animation: slideInUp 1s ease-out 0.2s both;
+    }
+
+    .services__description {
+        font-family: "Poppins", sans-serif;
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        line-height: 1.6;
+        margin: 0 0 1.5rem;
+        opacity: 0.95;
+        animation: slideInUp 1s ease-out 0.4s both;
+    }
+
+    /* Container Principal */
+    .services__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    /* Sección Intro */
+    .services__intro {
+        padding: 4rem 0 3rem;
+        text-align: center;
+        background: linear-gradient(
+            to bottom,
+            var(--white) 0%,
+            var(--bg-light) 100%
+        );
+    }
+
+    .services__intro-content {
+        max-width: 800px;
+        margin: 0 auto;
+        animation: fadeInUp 1s ease-out;
+    }
+
+    .services__badge {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--medium-blue) 0%, var(--accent-blue) 100%);
+        color: var(--white);
+        padding: 0.8rem 2rem;
+        border-radius: 50px;
+        font-family: var(--font-primary);
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 2rem;
+        box-shadow: var(--shadow-soft);
+        position: relative;
+        overflow: hidden;
+        transition: var(--transition);
+    }
+
+    .services__badge::before {
         content: "";
         position: absolute;
-        inset: 0; /* top: 0; left: 0; right: 0; bottom: 0 */
-        background: rgba(0, 0, 0, 0.5); /* Opacidad del overlay */
-        z-index: -1;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent
+        );
+        animation: shimmer 2s infinite;
     }
 
-    .servicio-title {
-        margin: 0;
-        font-size: 60px;
-        text-shadow: 1px 1px 2px #000;
-    }
-    .servicio-description-t {
-        margin: 0;
-        font-size: 1rem;
-        font-family: "Noto Sans", sans-serif;
-    }
-    .servicio-description {
-        margin: 0;
-        font-family: "Noto Sans", sans-serif;
+    .services__section-title {
+        font-family: var(--font-primary);
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 700;
+        color: var(--primary-blue);
+        margin: 0 0 1rem;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
     }
 
-    .servicio-contratista-title {
-        margin: 0 0 20px 0;
-        font-size: 50px;
-        display: flex;
-        justify-content: center;
+    .services__title-accent {
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent-blue) 0%, var(--medium-blue) 100%);
+        margin: 0 auto 2rem;
+        border-radius: 2px;
+        animation: expandWidth 1s ease-out;
     }
 
-    .servicio-container-contratistas {
+    .services__intro-description {
+        font-family: var(--font-secondary);
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--text-dark);
+        margin: 0 0 1.5rem;
+        opacity: 0.9;
+    }
+
+    /* Grid de Servicios Optimizado */
+    .services__grid {
+        padding: 4rem 0;
+        background: var(--white);
+    }
+
+    .services__grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 2.5rem;
+        margin-top: 2rem;
+        align-items: stretch;
+    }
+
+    .service__card {
+        background: var(--white);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow-soft);
+        transition: var(--transition);
         position: relative;
+        border: 1px solid var(--border-light);
+        min-height: 500px;
         display: flex;
         flex-direction: column;
     }
-    .contratista-btn-title {
-        display: flex;
-        justify-content: center;
-    }
-    .contratista-btn-title p {
-        font-size: 30px;
-        font-weight: bold;
-        background-color: rgb(33, 47, 77);
-        padding: 10px;
-        border-radius: 20px 0px;
-        color: white;
-    }
-    .contratista-container {
-        position: sticky;
+
+    .service__card::before {
+        content: "";
+        position: absolute;
         top: 0;
-        height: 40vh;
-        padding: 0 60px;
-        background-color: white;
-    }
-    .obras {
-        position: sticky;
-        top: 40vh;
-        height: 60vh;
-        z-index: 1;
-        background-color: rgb(255, 255, 255);
-        
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent-blue) 0%, var(--medium-blue) 100%);
+        opacity: 0;
+        transition: var(--transition);
     }
 
-    /**OBRAS DE CARRETERAS */
+    .service__card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-medium);
+    }
 
-    /**OBRAS DE AGUA POTABLE Y ALCANTARILLADO */
-    /**LABORATORIO DE ENSAYOS */
-    /**SOLUCIONES INTEGRALES PARA EQUIPOS PESADOS */
+    .service__card:hover::before {
+        opacity: 1;
+    }
+
+    /* Sección Showcase */
+    .services__showcase {
+        padding: 4rem 0;
+        background: linear-gradient(
+            135deg,
+            var(--bg-light) 0%,
+            var(--white) 100%
+        );
+        text-align: center;
+    }
+
+    .services__showcase-header {
+        margin-bottom: 3rem;
+    }
+
+    .services__showcase-description {
+        font-family: var(--font-secondary);
+        font-size: 1.1rem;
+        color: var(--text-light);
+        margin: 0;
+        opacity: 0.9;
+    }
+
+    .services__carousel {
+        margin-top: 2rem;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow-medium);
+    }
+
+    /* Animaciones */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideInUp {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes expandWidth {
+        from {
+            width: 0;
+        }
+        to {
+            width: 80px;
+        }
+    }
+
+    @keyframes shimmer {
+        0% {
+            left: -100%;
+        }
+        100% {
+            left: 100%;
+        }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .services__hero {
+            height: 70vh;
+            background-attachment: scroll;
+        }
+
+        .services__container {
+            padding: 0 1rem;
+        }
+
+        .services__intro {
+            padding: 3rem 0 2rem;
+        }
+
+        .services__grid {
+            padding: 3rem 0;
+        }
+
+        .services__grid-container {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .service__card {
+            min-height: 450px;
+        }
+
+        .services__showcase {
+            padding: 3rem 0;
+        }
+
+        .services__badge {
+            padding: 0.6rem 1.5rem;
+            font-size: 0.8rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .services__hero {
+            height: 60vh;
+        }
+
+        .services__hero-content {
+            padding: 0 1rem;
+        }
+
+        .services__intro {
+            padding: 2rem 0 1.5rem;
+        }
+
+        .services__grid-container {
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+        }
+
+        .service__card {
+            min-height: 400px;
+        }
+
+        .services__showcase {
+            padding: 2rem 0;
+        }
+    }
 </style>

@@ -19,292 +19,633 @@ import Banner from "../assets/banner-proyects.webp";
 const projDremy = [
     {
         img: instalacion,
-        desc: "Instalación del sistema de agua potable y alcantarillado en los sectores 251, 252, 256 y 257, beneficiando a Oquendo, Santa Rosa y El Naranjal.",
+        desc: "Instalación integral del sistema de agua potable y alcantarillado en los sectores 251, 252, 256 y 257, beneficiando directamente a las comunidades de Oquendo, Santa Rosa y El Naranjal con infraestructura moderna y sostenible.",
         ubi: "San Martín, Callao",
+        emoji: "🚰",
+        category: "Agua Potable"
     },
     {
         img: ampliacion,
-        desc: "Ampliación y mejoramiento del sistema de agua potable y alcantarillado en la localidad de Tumán, garantizando acceso seguro y sostenible para los residentes.",
+        desc: "Ampliación y mejoramiento integral del sistema de agua potable y alcantarillado en la localidad de Tumán, garantizando acceso seguro, continuo y sostenible al recurso hídrico para todos los residentes de la zona.",
         ubi: "Tumán, Lambayeque",
+        emoji: "🔧",
+        category: "Mejoramiento"
     },
     {
         img: aalcantarillado,
-        desc: "Obras de ampliación y mejora de los servicios de agua potable y alcantarillado en los anexos del distrito de Carabayllo, beneficiando a sus habitantes.",
+        desc: "Obras especializadas de ampliación y mejora de los servicios de agua potable y alcantarillado en los anexos del distrito de Carabayllo, beneficiando significativamente a sus habitantes con mejor calidad de vida.",
         ubi: "Carabayllo, Lima",
+        emoji: "🏗️",
+        category: "Alcantarillado"
     },
     {
         img: consorcio,
-        desc: "Instalación del sistema de agua potable y alcantarillado en Pativilca, Santa Clara, Simey, Los Aguilares, San Luis y Pitipo, mejorando la calidad de vida.",
+        desc: "Instalación completa del sistema de agua potable y alcantarillado en Pativilca, Santa Clara, Simey, Los Aguilares, San Luis y Pitipo, mejorando sustancialmente la calidad de vida de múltiples comunidades rurales.",
         ubi: "Lambayeque, Ferreñafe",
+        emoji: "🌊",
+        category: "Sistema Integral"
     },
     {
         img: antiplano,
-        desc: "Ejecución de obras civiles y saneamiento integral en las localidades de San Francisco, San Vicente Verlin y Rosario Pampa, promoviendo la salud pública.",
+        desc: "Ejecución especializada de obras civiles y saneamiento integral en las localidades de San Francisco, San Vicente Verlin y Rosario Pampa, promoviendo activamente la salud pública y el desarrollo sostenible comunitario.",
         ubi: "Anco, Ayacucho",
+        emoji: "🏔️",
+        category: "Saneamiento Rural"
     },
     {
         img: proyectSpecial,
-        desc: "Ampliación de redes de agua potable y alcantarillado como parte del proyecto especial en beneficio de la población local y mejora del entorno.",
+        desc: "Ampliación estratégica de redes de agua potable y alcantarillado como parte del proyecto especial en beneficio directo de la población local, mejorando significativamente el entorno urbano y la infraestructura sanitaria.",
         ubi: "SJL, Los Ángeles",
+        emoji: "⭐",
+        category: "Proyecto Especial"
     },
     {
         img: almacaes,
-        desc: "Trabajos de ampliación y mejora del sistema de agua potable y alcantarillado en el esquema de San Juan de Amancaes, para servicio continuo.",
+        desc: "Trabajos especializados de ampliación y mejora del sistema de agua potable y alcantarillado en el esquema de San Juan de Amancaes, garantizando servicio continuo y eficiente para toda la comunidad beneficiaria.",
         ubi: "Amancaes, Lima",
+        emoji: "🏘️",
+        category: "Desarrollo Urbano"
     },
     {
         img: habilitacion,
-        desc: "Habilitación urbana e industrial en la zona de Huachipa, Petromax 1.ª Etapa, incluyendo obras sanitarias básicas de agua potable y alcantarillado.",
+        desc: "Habilitación urbana e industrial integral en la zona de Huachipa, Petromax 1.ª Etapa, incluyendo obras sanitarias básicas de agua potable y alcantarillado con estándares de calidad internacional y sostenibilidad ambiental.",
         ubi: "Huachipa, Lima",
+        emoji: "🏭",
+        category: "Habilitación Industrial"
     },
 ];
 
 const projJail = [
     {
         img: chiclayo,
-        desc: "Instalación del sistema de agua potable y alcantarillado en el esquema de Pomalca, proporcionando acceso seguro al recurso para la población local.",
+        desc: "Instalación completa del sistema de agua potable y alcantarillado en el esquema de Pomalca, proporcionando acceso seguro y continuo al recurso hídrico para toda la población local con tecnología moderna y eficiente.",
         ubi: "Pomalca, Chiclayo",
+        emoji: "💧",
+        category: "Agua Potable"
     },
     {
         img: carapongo,
-        desc: "Ampliación y mejora integral del sistema de agua potable y alcantarillado en la localidad de Carapongo, mejorando la infraestructura sanitaria de la zona.",
+        desc: "Ampliación y mejora integral del sistema de agua potable y alcantarillado en la localidad de Carapongo, mejorando sustancialmente la infraestructura sanitaria de la zona con soluciones innovadoras y sostenibles para el desarrollo.",
         ubi: "Carapongo, Lima",
+        emoji: "🚿",
+        category: "Infraestructura"
     },
     {
         img: ramon,
-        desc: "Mejoramiento y ampliación del sistema de agua potable y alcantarillado en San Ramón, asegurando una red eficiente y accesible para todos los vecinos.",
+        desc: "Mejoramiento y ampliación estratégica del sistema de agua potable y alcantarillado en San Ramón, asegurando una red eficiente, moderna y accesible para todos los vecinos con altos estándares de calidad y durabilidad.",
         ubi: "San Ramón, Junín",
+        emoji: "🌿",
+        category: "Mejoramiento Rural"
     },
     {
         img: chilca,
-        desc: "Obras de ampliación y mejora del sistema de alcantarillado en la localidad de Chilca, fortaleciendo la infraestructura sanitaria y el bienestar comunitario.",
+        desc: "Obras especializadas de ampliación y mejora del sistema de alcantarillado en la localidad de Chilca, fortaleciendo significativamente la infraestructura sanitaria y promoviendo el bienestar comunitario con soluciones técnicas avanzadas.",
         ubi: "Chilca, Lima",
+        emoji: "🔄",
+        category: "Sistema Sanitario"
     },
 ];
 ---
 
-<section class="projects-section">
-    <div class="projects-hero">
-        <Image src={Banner} alt="" class="bg"/>
-        <div class="overlay"></div>
-        <span class="projects-hero__description"> 
-            La empresa "JAIL CONSTRUCTORA S.A.C." posee experiencia en la
-            prestación de servicios, ejecución de obras civiles, carreteras,
-            obras hidráulicas, saneamiento urbano y rural, voladura de roca, y
-            alquiler de maquinaria pesada.
-        </span>
+<section class="projects">
+    <div class="projects__hero">
+        <div class="projects__hero-image-wrapper">
+            <Image src={Banner} alt="Proyectos de JAIL CONSTRUCTORA S.A.C" class="projects__hero-image"/>
+            <div class="projects__hero-overlay"></div>
+        </div>
+        <div class="projects__hero-content">
+            <div class="projects__hero-badge">Nuestra Experiencia</div>
+            <h1 class="projects__hero-title">Transformando el Futuro</h1>
+            <p class="projects__hero-description"> 
+                La empresa "JAIL CONSTRUCTORA S.A.C." posee experiencia consolidada en la prestación de servicios especializados, ejecución de obras civiles, carreteras, obras hidráulicas, saneamiento urbano y rural, voladura de roca, y alquiler de maquinaria pesada con los más altos estándares de calidad y eficiencia.
+            </p>
+        </div>
     </div>
-    <div class="projects-container">
-        <div class="projects-title">
-            <p>Nuestros Proyectos y Experiencia</p>
+    
+    <div class="projects__container">
+        <div class="projects__header">
+            <h2 class="projects__main-title">Nuestros Proyectos y Experiencia</h2>
+            <div class="projects__title-accent"></div>
         </div>
-        <div>
-            <h2 class="projects-company__title">
-                <BriefcaseBusinessIcon />
-                Dremy Servicios Generales S.A.C.
-            </h2>
-            <section class="projects-company">
+        
+        <div class="projects__company-section">
+            <div class="projects__company-header">
+                <div class="projects__company-icon">
+                    <BriefcaseBusinessIcon />
+                </div>
+                <h3 class="projects__company-title">Dremy Servicios Generales S.A.C.</h3>
+            </div>
+            <div class="projects__grid">
                 {
-                    projDremy.map((projDremy) => (
+                    projDremy.map((project) => (
                         <article class="project-card">
-                            <div>
+                            <div class="project-card__image-wrapper">
                                 <Image
-                                    src={projDremy.img}
-                                    alt={projDremy.desc}
-                                    class={"project-card__image"}
-                                    width={300}
+                                    src={project.img}
+                                    alt={project.desc}
+                                    class="project-card__image"
+                                    width={400}
+                                    height={300}
                                 />
-                                <div class="project-card__content">
-                                    <p
-                                        itemprop="location"
-                                        class="project-card__location"
-                                    >
-                                        {projDremy.ubi}
-                                    </p>
-                                    <p
-                                        itemprop="description"
-                                        class="project-card__description"
-                                    >
-                                        {projDremy.desc}
-                                    </p>
-
-                                    <div class="project-card__action">
-                                        <div class="project-card__button">
-                                            <span>Ver más</span>
-                                            <span class="project-card__button-icon">
-                                                <ArrowRight />
-                                            </span>
-                                        </div>
-                                    </div>
+                                <div class="project-card__overlay"></div>
+                                <div class="project-card__category">
+                                    <span class="project-card__emoji">{project.emoji}</span>
+                                    <span class="project-card__category-text">{project.category}</span>
+                                </div>
+                            </div>
+                            <div class="project-card__content">
+                                <div class="project-card__location">
+                                    <span class="project-card__location-icon">📍</span>
+                                    <span>{project.ubi}</span>
+                                </div>
+                                <p class="project-card__description">
+                                    {project.desc}
+                                </p>
+                                <div class="project-card__action">
+                                    <button class="project-card__button">
+                                        <span>Ver más detalles</span>
+                                        <span class="project-card__button-icon">
+                                            <ArrowRight />
+                                        </span>
+                                    </button>
                                 </div>
                             </div>
                         </article>
                     ))
                 }
-            </section>
+            </div>
         </div>
-        <div>
-            <h2 class="projects-company__title">
-                <BriefcaseBusinessIcon />
-                JAIL Servicios Generales S.A.C.
-            </h2>
-            <section class="projects-company">
+        
+        <div class="projects__company-section">
+            <div class="projects__company-header">
+                <div class="projects__company-icon">
+                    <BriefcaseBusinessIcon />
+                </div>
+                <h3 class="projects__company-title">JAIL Servicios Generales S.A.C.</h3>
+            </div>
+            <div class="projects__grid">
                 {
-                    projJail.map((projJail) => (
+                    projJail.map((project) => (
                         <article class="project-card">
-                            <div>
+                            <div class="project-card__image-wrapper">
                                 <Image
-                                    src={projJail.img}
-                                    alt={projJail.desc}
-                                    class={"project-card__image"}
-                                    width={300}
+                                    src={project.img}
+                                    alt={project.desc}
+                                    class="project-card__image"
+                                    width={400}
+                                    height={300}
                                 />
-                                <div class="project-card__content">
-                                    <p
-                                        itemprop="location"
-                                        class="project-card__location"
-                                    >
-                                        {projJail.ubi}
-                                    </p>
-                                    <p
-                                        itemprop="description"
-                                        class="project-card__description"
-                                    >
-                                        {projJail.desc}
-                                    </p>
-
-                                    <div class="project-card__action">
-                                        <div class="project-card__button">
-                                            <span>Ver más</span>
-                                            <span class="project-card__button-icon">
-                                                <ArrowRight />
-                                            </span>
-                                        </div>
-                                    </div>
+                                <div class="project-card__overlay"></div>
+                                <div class="project-card__category">
+                                    <span class="project-card__emoji">{project.emoji}</span>
+                                    <span class="project-card__category-text">{project.category}</span>
+                                </div>
+                            </div>
+                            <div class="project-card__content">
+                                <div class="project-card__location">
+                                    <span class="project-card__location-icon">📍</span>
+                                    <span>{project.ubi}</span>
+                                </div>
+                                <p class="project-card__description">
+                                    {project.desc}
+                                </p>
+                                <div class="project-card__action">
+                                    <button class="project-card__button">
+                                        <span>Ver más detalles</span>
+                                        <span class="project-card__button-icon">
+                                            <ArrowRight />
+                                        </span>
+                                    </button>
                                 </div>
                             </div>
                         </article>
                     ))
                 }
-            </section>
+            </div>
         </div>
     </div>
 </section>
 <style>
-    .projects-hero {
-        position: relative;
-        max-width: 100%;
-        height: 70vh;
-        display: flex;
-        align-items: center;
-    }
-    .bg{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 0;
-    }
-    .overlay{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 1;
-    }
-    .projects-hero span{
-        z-index: 2;
-        font-size: 1.5rem;
-        color: white;
-        font-family: "Noto Sans", sans-serif;
-        position: relative;
-        display: flex;
-        padding: 60px;
-        width: 50%;
-        
-    }
-    .projects-title {
-        display: flex;
-        justify-content: center;
-    }
-    .projects-title p {
-        background-color: #212f4d;
-        font-size: 30px;
-        padding: 10px;
-        border-radius: 20px 0 20px 0;
-        color: white;
-        margin-bottom: 0;
-    }
-    .projects-container {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 0 8rem;
-    }
-    .projects-company__title {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        font-size: 3rem;
+    /* Variables CSS coherentes */
+    :root {
+        --primary-blue: #293e49;
+        --medium-blue: #0a71ac;
+        --accent-blue: #20a6ff;
+        --dark-blue: #083d63;
+        --text-dark: #2c3e50;
+        --text-light: #7f8c8d;
+        --bg-light: #f8f9fa;
+        --white: #ffffff;
+        --font-primary: "Poppins", sans-serif;
+        --font-secondary: "Noto Sans", sans-serif;
+        --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+        --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+        --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.15);
+        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+        --gradient-accent: linear-gradient(135deg, var(--medium-blue) 0%, var(--accent-blue) 100%);
     }
 
-    .projects-company {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        max-width: 100%;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
-    }
-    .project-card {
+    /* Hero Section */
+    .projects {
         width: 100%;
-        box-shadow: 0px 2px 20px rgb(13, 86, 134);
+        box-sizing: border-box;
+    }
+
+    .projects__hero {
+        position: relative;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .projects__hero-image-wrapper {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+    }
+
+    .projects__hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+    }
+
+    .projects__hero-overlay {
+        position: absolute;
+        inset: 0;
+                background: linear-gradient(135deg, rgba(11, 81, 129, 0.8), rgba(8, 61, 99, 0.9));
+
+        z-index: 1;
+    }
+
+    .projects__hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        color: var(--white);
+        animation: fadeInUp 1s ease-out;
+        box-sizing: border-box;
+    }
+
+    .projects__hero-badge {
+        display: inline-block;
+        background: var(--gradient-accent);
+        color: var(--white);
+        padding: 0.5rem 1.5rem;
+        border-radius: 25px;
+        font-family: var(--font-primary);
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 1.5rem;
+        box-shadow: var(--shadow-soft);
+    }
+
+    .projects__hero-title {
+        font-family: "Poppins", sans-serif;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        margin: 0 0 1.5rem;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        
+    }
+
+    .projects__hero-description {
+        font-family: "Poppins", sans-serif;
+        font-size: clamp(1.1rem, 2vw, 1.3rem);
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0;
+        opacity: 0.95;
+    }
+
+    /* Container Principal */
+    .projects__container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 5rem 2rem;
+        box-sizing: border-box;
+    }
+
+    .projects__header {
+        text-align: center;
+        margin-bottom: 4rem;
+        animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+
+    .projects__main-title {
+        font-family: var(--font-primary);
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 700;
+        color: var(--primary-blue);
+        margin: 0 0 1rem;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+    }
+
+    .projects__title-accent {
+        width: 100px;
+        height: 4px;
+        background: var(--gradient-accent);
+        margin: 0 auto;
+        border-radius: 2px;
+    }
+
+    /* Company Sections */
+    .projects__company-section {
+        margin-bottom: 5rem;
+        animation: fadeInUp 0.8s ease-out 0.4s both;
+    }
+
+    .projects__company-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 3rem;
+        padding: 2rem;
+        background: var(--gradient-primary);
+        border-radius: 20px;
+        box-shadow: var(--shadow-medium);
+        transition: var(--transition);
+        box-sizing: border-box;
+    }
+
+    .projects__company-header:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-strong);
+    }
+
+    .projects__company-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background: var(--white);
+        color: var(--primary-blue);
+        border-radius: 15px;
+        box-shadow: var(--shadow-soft);
+    }
+
+    .projects__company-title {
+        font-family: var(--font-primary);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 700;
+        color: var(--white);
+        margin: 0;
+        letter-spacing: -0.01em;
+    }
+
+    /* Grid de Proyectos */
+    .projects__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        gap: 2.5rem;
+        margin-top: 2rem;
+    }
+
+    /* Project Cards */
+    .project-card {
+        background: var(--white);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow-soft);
+        transition: var(--transition);
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        border-radius: 10px;
-        overflow: hidden;
-        background-color: #0a2b47;
+        height: 100%;
+        box-sizing: border-box;
     }
+
+    .project-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: var(--shadow-strong);
+    }
+
+    .project-card__image-wrapper {
+        position: relative;
+        height: 250px;
+        overflow: hidden;
+    }
+
     .project-card__image {
         width: 100%;
-        height: 250px;
+        height: 100%;
         object-fit: cover;
+        transition: var(--transition);
     }
-    .project-card__location {
-        font-weight: bold;
+
+    .project-card:hover .project-card__image {
+        transform: scale(1.1);
+    }
+
+    .project-card__overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            135deg,
+            rgba(41, 62, 73, 0.1) 0%,
+            rgba(10, 113, 172, 0.3) 100%
+        );
+        opacity: 0;
+        transition: var(--transition);
+    }
+
+    .project-card:hover .project-card__overlay {
+        opacity: 1;
+    }
+
+    .project-card__category {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 0.5rem 1rem;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        box-shadow: var(--shadow-soft);
+        z-index: 2;
+    }
+
+    .project-card__emoji {
         font-size: 1.2rem;
     }
+
+    .project-card__category-text {
+        font-family: var(--font-primary);
+        font-weight: 600;
+        font-size: 0.8rem;
+        color: var(--primary-blue);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
     .project-card__content {
-        padding: 20px;
-        font-family: "Noto Sans", sans-serif;
-        color: #fff;
+        padding: 2rem;
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 1.5rem;
+        flex: 1;
+        box-sizing: border-box;
     }
-    .project-card__content p {
+
+    .project-card__location {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--font-primary);
+        font-weight: 600;
+        font-size: 1rem;
+        color: var(--medium-blue);
+    }
+
+    .project-card__location-icon {
+        font-size: 1.1rem;
+    }
+
+    .project-card__description {
+        font-family: var(--font-secondary);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: var(--text-dark);
         margin: 0;
+        flex: 1;
+        text-align: justify;
     }
+
+    .project-card__action {
+        margin-top: auto;
+    }
+
     .project-card__button {
         display: flex;
         align-items: center;
-        font-size: 1.2rem;
-        gap: 10px;
-        color: white;
-        background-color: #0877c1;
-        padding: 5px 10px;
-        border-radius: 1rem;
-        width: fit-content;
+        gap: 0.8rem;
+        background: var(--gradient-accent);
+        color: var(--white);
+        border: none;
+        padding: 1rem 1.5rem;
+        border-radius: 15px;
+        font-family: var(--font-primary);
+        font-weight: 600;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: var(--transition);
+        width: 100%;
+        justify-content: center;
+        box-shadow: var(--shadow-soft);
+        box-sizing: border-box;
     }
+
+    .project-card__button:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-medium);
+        background: linear-gradient(135deg, var(--accent-blue) 0%, var(--medium-blue) 100%);
+    }
+
     .project-card__button-icon {
-        background-color: white;
-        border-radius: 50%;
         display: flex;
-        color: black;
-        padding: 5px;
         align-items: center;
         justify-content: center;
+        width: 24px;
+        height: 24px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        transition: var(--transition);
+    }
+
+    .project-card__button:hover .project-card__button-icon {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateX(5px);
+    }
+
+    /* Animaciones */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .projects__hero {
+            height: 60vh;
+        }
+
+        .projects__hero-content {
+            padding: 0 1.5rem;
+        }
+
+        .projects__container {
+            padding: 3rem 1.5rem;
+        }
+
+        .projects__company-header {
+            padding: 1.5rem;
+            flex-direction: column;
+            text-align: center;
+            gap: 1rem;
+        }
+
+        .projects__grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .project-card__content {
+            padding: 1.5rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .projects__hero {
+            height: 50vh;
+        }
+
+        .projects__hero-content {
+            padding: 0 1rem;
+        }
+
+        .projects__container {
+            padding: 2rem 1rem;
+        }
+
+        .projects__company-header {
+            padding: 1rem;
+        }
+
+        .projects__grid {
+            gap: 1.5rem;
+        }
+
+        .project-card__image-wrapper {
+            height: 200px;
+        }
+
+        .project-card__content {
+            padding: 1rem;
+            gap: 1rem;
+        }
+
+        .project-card__button {
+            padding: 0.8rem 1rem;
+        }
     }
 </style>

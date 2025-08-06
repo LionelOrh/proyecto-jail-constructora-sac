@@ -3,63 +3,272 @@ import { Image } from "astro:assets";
 import ensayoslaboratorio from "../assets/ensayoslaboratorio.webp";
 ---
 
-<section class="servicio-ensayo-laboratorio">
-    <article class="servicio-container">
-        <div class="servicio-detalles">
-            <h2 class="servicio-title">ENSAYOS DE LABORATORIO</h2>
-            <ul class="list-detalles">
-                <li>Ensayos Especiales (ASTM)</li>
-                <li>Ensayos de Agregados (ASTM / MTC / NTP)</li>
-                <li>Ensayos de Suelos (ASTM / MTC)</li>
-                <li>Ensayos de Campo en Suelos</li>
-                <li>Ensayos de Concreto Fresco y Endurecido (ASTM / MTC)</li>
-                <li>Ensayos Químicos (ASTM /MTC /NTP)</li>
-            </ul>
+<section class="laboratorio">
+    <div class="laboratorio__container">
+        <div class="laboratorio__content">
+            <div class="laboratorio__header">
+                <span class="laboratorio__badge">Laboratorio</span>
+                <h3 class="laboratorio__title">Ensayos de Laboratorio</h3>
+                <div class="laboratorio__title-accent"></div>
+            </div>
+            <div class="laboratorio__services">
+                <div class="laboratorio__service-item">
+                    <span class="laboratorio__service-icon">🔬</span>
+                    <span>Ensayos Especiales (ASTM)</span>
+                </div>
+                <div class="laboratorio__service-item">
+                    <span class="laboratorio__service-icon">🗿</span>
+                    <span>Agregados (ASTM/MTC/NTP)</span>
+                </div>
+                <div class="laboratorio__service-item">
+                    <span class="laboratorio__service-icon">🌍</span>
+                    <span>Ensayos de Suelos (ASTM/MTC)</span>
+                </div>
+                <div class="laboratorio__service-item">
+                    <span class="laboratorio__service-icon">📊</span>
+                    <span>Ensayos de Campo en Suelos</span>
+                </div>
+                <div class="laboratorio__service-item">
+                    <span class="laboratorio__service-icon">🏗️</span>
+                    <span>Concreto (ASTM/MTC)</span>
+                </div>
+                <div class="laboratorio__service-item">
+                    <span class="laboratorio__service-icon">⚗️</span>
+                    <span>Ensayos Químicos</span>
+                </div>
+            </div>
         </div>
-        <div class="servicio-img">
+        <div class="laboratorio__image-wrapper">
+            <div class="laboratorio__image-overlay"></div>
             <Image
                 src={ensayoslaboratorio}
-                alt="Ensayos de laboratorio"
-                class="servicio-image"
-                width={1000}
+                alt="Ensayos de laboratorio - JAIL CONSTRUCTORA S.A.C"
+                class="laboratorio__image"
+                width={600}
                 height={400}
             />
         </div>
-    </article>
+    </div>
 </section>
 <style>
-    .servicio-ensayo-laboratorio {
-        height: 60vh;
+    /* Variables locales coherentes */
+    :root {
+        --primary-blue: #293e49;
+        --medium-blue: #0a71ac;
+        --accent-blue: #20a6ff;
+        --dark-blue: #083d63;
+        --text-dark: #2c3e50;
+        --text-light: #7f8c8d;
+        --bg-light: #f8f9fa;
+        --white: #ffffff;
+        --font-primary: "Poppins", sans-serif;
+        --font-secondary: "Noto Sans", sans-serif;
+        --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+        --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .laboratorio {
         width: 100%;
-        background-color: white;
-    }
-    .servicio-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
         height: 100%;
-        align-items: center;
+        padding: 2.5rem;
+        background: var(--white);
+        border-radius: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
     }
-    .servicio-img {
-        height: 380px; /* Altura fija para el contenedor de la imagen */
-        overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
-        border-radius: 100px 0px 0px 100px;
+
+    .laboratorio__container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        height: 100%;
+        flex: 1;
+        max-width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
     }
-    .servicio-image {
+
+    .laboratorio__content {
+        padding: 0 1rem;
+        order: 2;
+        flex: 1;
+        box-sizing: border-box;
+    }
+
+    .laboratorio__image-wrapper {
+        position: relative;
+        height: 200px;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow-soft);
+        transition: var(--transition);
+        order: 1;
+        flex-shrink: 0;
+        margin: 0 1rem;
+    }
+
+    .laboratorio__image-wrapper:hover {
+        transform: scale(1.02);
+        box-shadow: var(--shadow-medium);
+    }
+
+    .laboratorio__image-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            135deg,
+            rgba(41, 62, 73, 0.3) 0%,
+            rgba(10, 113, 172, 0.2) 100%
+        );
+        z-index: 1;
+        opacity: 0;
+        transition: var(--transition);
+    }
+
+    .laboratorio__image-wrapper:hover .laboratorio__image-overlay {
+        opacity: 1;
+    }
+
+    .laboratorio__image {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transition: var(--transition);
     }
-    .list-detalles {
-        font-size: 1.6rem;
-        font-family: "Noto Sans", sans-serif;
+
+    .laboratorio__header {
+        margin-bottom: 1.5rem;
+        text-align: center;
     }
-    .servicio-detalles {
-        padding-left: 60px;
+
+    .laboratorio__badge {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+        color: var(--white);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-family: var(--font-primary);
+        font-weight: 600;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 1rem;
+        box-shadow: var(--shadow-soft);
     }
-    .servicio-title {
-        font-size: 2.4rem;
-        font-weight: bold;
-        margin: 0;
+
+    .laboratorio__title {
+        font-family: var(--font-primary);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 700;
+        color: var(--primary-blue);
+        margin: 0 0 1rem;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+    }
+
+    .laboratorio__title-accent {
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+        border-radius: 2px;
+        margin: 0 auto 1rem;
+    }
+
+    .laboratorio__services {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.7rem;
+        flex: 1;
+    }
+
+    .laboratorio__service-item {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        padding: 0.7rem;
+        background: var(--bg-light);
+        border-radius: 10px;
+        font-family: var(--font-secondary);
+        font-size: 0.8rem;
+        color: var(--text-dark);
+        transition: var(--transition);
+        border-left: 3px solid transparent;
+        box-sizing: border-box;
+    }
+
+    .laboratorio__service-item:hover {
+        background: var(--white);
+        border-left-color: var(--primary-blue);
+        transform: translateX(5px);
+        box-shadow: var(--shadow-soft);
+    }
+
+    .laboratorio__service-icon {
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+        border-radius: 6px;
+        flex-shrink: 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .laboratorio {
+            padding: 2rem;
+        }
+
+        .laboratorio__container {
+            gap: 1.5rem;
+        }
+
+        .laboratorio__content {
+            padding: 0 0.5rem;
+        }
+
+        .laboratorio__image-wrapper {
+            height: 180px;
+            margin: 0 0.5rem;
+        }
+
+        .laboratorio__services {
+            grid-template-columns: 1fr;
+            gap: 0.6rem;
+        }
+
+        .laboratorio__service-item {
+            padding: 0.6rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .laboratorio {
+            padding: 1.5rem;
+        }
+
+        .laboratorio__content {
+            padding: 0;
+        }
+
+        .laboratorio__image-wrapper {
+            height: 160px;
+            margin: 0;
+        }
+
+        .laboratorio__service-item {
+            font-size: 0.8rem;
+        }
+
+        .laboratorio__service-icon {
+            width: 28px;
+            height: 28px;
+            font-size: 1rem;
+        }
     }
 </style>
