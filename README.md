@@ -5,7 +5,7 @@
 
 
 ## 📌 Descripción  
-Plataforma innovadora para la industria de construcción que integra tecnologías modernas para optimizar procesos y mejorar eficiencia.  
+Plataforma innovadora para la industria de construcción que integra tecnologías modernas para optimizar procesos y mejorar eficiencia.  aa
 
 ## 🚀 Tecnologías  
 <div align="center">  
